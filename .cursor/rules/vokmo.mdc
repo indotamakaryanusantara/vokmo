@@ -1,107 +1,418 @@
 ---
-description: Konvensi inti proyek vokmo untuk Cursor Agent
+description: Core conventions for the VOKMO project used by Cursor Agent
 alwaysApply: true
 ---
 
-# Proyek Vokmo
+# VOKMO Project
 
-## Bahasa
-- Komunikasi dengan pengguna dalam Bahasa Indonesia, kecuali diminta bahasa lain.
-- Komentar dan nama simbol mengikuti konvensi yang sudah dipakai di repo; jika belum ada, utamakan kejelasan.
+## Language
+- Communicate with users in Indonesian unless another language is requested.
+- Use English for variables, functions, component names, and folder naming.
+- Avoid unclear abbreviations.
+- Use code comments only when truly necessary.
 
-## Lingkup perubahan
-- Hanya ubah kode yang diperlukan untuk tugas yang diminta; hindari refactor atau file tambahan yang tidak diminta.
+---
 
-## Keamanan
-- Jangan menyimpan secret, token API, atau kredensial di kode atau di rules; gunakan variabel lingkungan atau penyimpanan rahasia yang disepakati tim.
+# Project Goal
 
-## Stack & arsitektur
-Create a modern, premium, responsive company profile website for VOKMO.
+Build a modern enterprise-grade company profile website for VOKMO.
 
-Tech stack:
-- Next.js App Router
-- Tailwind CSS
-- TypeScript
-- Clean reusable component structure
-- Optimized for Cloudflare deployment
-- Mobile-first responsive design
-- Smooth animations and modern UI
-- SEO-friendly structure
+The website must be:
+- modern
+- premium
+- fast
+- SEO friendly
+- fully responsive
+- production-ready
+- optimized for Cloudflare deployment
 
-Style reference:
+Main visual reference:
 https://activa.co.id
 
-Design direction:
-- Professional corporate style
-- Modern minimalist layout
-- Dark + white balanced sections
-- Strong typography
-- Clean spacing
-- Subtle motion effects
-- Premium startup aesthetic
-- High-end digital agency feel
+---
 
-Brand name:
-VOKMO
+# Stack & Technologies
 
-Industry:
-Technology / Digital Solutions / Creative Innovation
+Use the following stack:
 
-Main goals:
-- Build trust
-- Showcase services
-- Present company professionally
-- Generate leads/contact inquiries
+- Next.js App Router
+- TypeScript
+- Tailwind CSS
+- Framer Motion for animations
+- Lucide React for icons
+- Cloudflare-compatible architecture
+- Mobile-first responsive design
 
-Pages required:
-1. Home
-2. About Us
-3. Services
-4. Portfolio / Projects
-5. Contact
+REQUIRED:
+- Use functional components
+- Use server components whenever possible
+- Minimize client components
+- Avoid unnecessary dependencies
+- Optimize performance and Lighthouse score
 
-Homepage sections:
-- Hero section with strong headline and CTA
-- Trusted company / statistics section
-- Services overview cards
-- Why choose us
-- Featured projects / portfolio
-- Process / workflow section
-- Testimonials
-- CTA banner
-- Footer with contact information
+---
 
-Services examples:
-- Web Development
-- Cloud Solutions
-- AI Automation
-- Digital Transformation
-- UI/UX Design
-- System Integration
+# Folder Architecture
 
-Requirements:
-- Use modern gradients subtly
-- Rounded corners
-- Professional icon usage
-- Sticky transparent navbar
-- Animated hover effects
-- Beautiful mobile menu
-- Elegant footer
-- Responsive grid layout
-- Accessibility friendly
+Use the following folder structure:
 
-Create production-quality UI components.
-Avoid generic template appearance.
-Make the design look unique, premium, and enterprise-grade.
+```txt
+src/
+ ├── app/
+ ├── components/
+ │    ├── common/
+ │    ├── layout/
+ │    ├── sections/
+ │    └── ui/
+ ├── lib/
+ ├── styles/
+ ├── constants/
+ ├── hooks/
+ ├── types/
+ └── assets/
+````
 
-Use placeholder images from Unsplash where necessary.
+Rules:
 
-Add realistic professional copywriting for all sections.
+* Components must be reusable
+* Separate sections into dedicated files
+* Avoid oversized files
+* Prefer one responsibility per component
 
-Include:
-- favicon support
-- SEO metadata
-- OpenGraph metadata
-- clean folder structure
+---
 
-Output complete working codebase.
+# Styling Rules
+
+Use:
+
+* Tailwind utility classes
+* Consistent spacing system
+* Clean whitespace
+* Modern responsive layouts
+
+Avoid:
+
+* inline styles
+* excessive hardcoded pixel values
+* rigid layouts
+* random colors
+* excessive shadows
+* over-animated UI
+
+---
+
+# Typography Rules
+
+## Global Fonts
+
+Use:
+
+* Poppins
+* Montserrat
+
+Import fonts using Next.js Font Optimization.
+
+## Typography Scale
+
+### Headings
+
+* H1 → Poppins Bold 76px
+* H2 → Poppins SemiBold 64px
+* H3 → Poppins SemiBold 48px
+* H4 → Poppins SemiBold 36px
+* H5 → Montserrat Bold 24px
+* H6 → Montserrat Bold 18px
+
+### Body
+
+* Paragraph → Montserrat Medium 18px
+* Bold Text → Montserrat Bold 20px
+
+### Navbar
+
+* Montserrat Bold 14px
+
+---
+
+# Responsive Rules
+
+The website MUST be fully responsive for all browser inspect sizes.
+
+Optimize specifically for:
+
+* 320px
+* 375px
+* 425px
+* 768px
+* 1024px
+* 1280px
+* 1440px
+* 1920px
+
+Ensure:
+
+* No horizontal overflow
+* No overlapping elements
+* Typography remains readable
+* Grids collapse properly
+* Mobile navigation works perfectly
+* Spacing remains consistent
+
+Use Tailwind breakpoints:
+
+* sm:
+* md:
+* lg:
+* xl:
+* 2xl:
+
+Use:
+
+* mobile-first approach
+* flexible layouts
+* responsive typography
+* responsive spacing
+
+---
+
+# Design Direction
+
+Website style:
+
+* premium startup aesthetic
+* high-end digital agency
+* professional corporate design
+* modern minimalist layout
+* balanced dark and white sections
+* elegant gradients
+* subtle motion effects
+
+REQUIRED:
+
+* Must look modern
+* Must feel premium
+* Must not look like a generic free template
+* Clean composition
+* Elegant section transitions
+
+---
+
+# UI Requirements
+
+REQUIRED:
+
+* Sticky transparent navbar
+* Smooth scrolling
+* Animated hover effects
+* Responsive mobile navigation
+* Rounded corners
+* Elegant shadows
+* Modern card design
+* CTA sections
+* Professional icon usage
+* Accessible components
+
+Use:
+
+* soft gradients
+* light glassmorphism when relevant
+* subtle blur effects
+* modern section spacing
+
+---
+
+# Required Pages
+
+## Home
+
+Sections:
+
+* Hero
+* Statistics / trusted section
+* Services overview
+* Why choose us
+* Featured projects
+* Workflow/process
+* Testimonials
+* CTA banner
+* Footer
+
+## About Us
+
+* Company story
+* Vision and mission
+* Team overview
+* Company values
+
+## Services
+
+Service examples:
+
+* Web Development
+* Cloud Solutions
+* AI Automation
+* Digital Transformation
+* UI/UX Design
+* System Integration
+
+## Portfolio / Projects
+
+* Modern project showcase
+* Responsive project cards
+* Clean image presentation
+
+## Contact
+
+* Contact form
+* Company information
+* CTA section
+* Google Maps placeholder
+
+---
+
+# Animations
+
+Use Framer Motion subtly.
+
+Allowed animations:
+
+* fade in
+* slide up
+* stagger animation
+* hover transitions
+* smooth scaling
+
+Avoid:
+
+* excessive animations
+* flashy effects
+* distracting motion
+
+---
+
+# SEO Rules
+
+REQUIRED:
+
+* metadata per page
+* OpenGraph metadata
+* semantic HTML
+* proper heading hierarchy
+* image alt text
+* accessible labels
+
+Use:
+
+* next/image
+* next/link
+
+---
+
+# Asset Rules
+
+Use:
+
+* placeholder images from Unsplash when necessary
+* icons from Lucide React
+
+Do not:
+
+* use low-quality random assets
+* use blurry images
+* mix inconsistent icon styles
+
+---
+
+# Copywriting
+
+Tone:
+
+* professional
+* modern
+* confident
+* enterprise-grade
+
+Avoid:
+
+* overly generic copy
+* excessive jargon
+* meaningless filler text
+
+Focus on:
+
+* trust
+* innovation
+* technology
+* digital transformation
+* business growth
+
+---
+
+# Performance Rules
+
+REQUIRED:
+
+* Optimized images
+* Lazy loading
+* Minimize unnecessary re-renders
+* Clean component structure
+* Avoid unnecessary client-side rendering
+
+Targets:
+
+* Fast loading
+* Smooth scrolling
+* Strong Lighthouse score
+
+---
+
+# Security
+
+* Never hardcode secrets
+* Never commit API tokens
+* Use environment variables
+* Never expose private configurations
+
+---
+
+# Scope of Changes
+
+* Only modify code relevant to the requested task
+* Avoid unnecessary large refactors
+* Do not remove existing code without clear justification
+* Keep the project structure organized
+
+---
+
+# Code Quality
+
+REQUIRED:
+
+* clean code
+* readable naming
+* reusable components
+* proper typing
+* avoid using any whenever possible
+
+Avoid:
+
+* duplicated code
+* oversized component files
+* excessive nested logic
+* magic numbers
+
+---
+
+# Final Output Expectations
+
+The final result must:
+
+* look premium
+* feel enterprise-grade
+* be perfectly responsive
+* be production-ready
+* have a clean modern UI
+* be deploy-ready for Cloudflare
+* avoid looking like a generic template
+
+Output must be a complete working codebase.
