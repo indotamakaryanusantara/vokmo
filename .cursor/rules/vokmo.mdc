@@ -1,0 +1,107 @@
+---
+description: Konvensi inti proyek vokmo untuk Cursor Agent
+alwaysApply: true
+---
+
+# Proyek Vokmo
+
+## Bahasa
+- Komunikasi dengan pengguna dalam Bahasa Indonesia, kecuali diminta bahasa lain.
+- Komentar dan nama simbol mengikuti konvensi yang sudah dipakai di repo; jika belum ada, utamakan kejelasan.
+
+## Lingkup perubahan
+- Hanya ubah kode yang diperlukan untuk tugas yang diminta; hindari refactor atau file tambahan yang tidak diminta.
+
+## Keamanan
+- Jangan menyimpan secret, token API, atau kredensial di kode atau di rules; gunakan variabel lingkungan atau penyimpanan rahasia yang disepakati tim.
+
+## Stack & arsitektur
+Create a modern, premium, responsive company profile website for VOKMO.
+
+Tech stack:
+- Next.js App Router
+- Tailwind CSS
+- TypeScript
+- Clean reusable component structure
+- Optimized for Cloudflare deployment
+- Mobile-first responsive design
+- Smooth animations and modern UI
+- SEO-friendly structure
+
+Style reference:
+https://activa.co.id
+
+Design direction:
+- Professional corporate style
+- Modern minimalist layout
+- Dark + white balanced sections
+- Strong typography
+- Clean spacing
+- Subtle motion effects
+- Premium startup aesthetic
+- High-end digital agency feel
+
+Brand name:
+VOKMO
+
+Industry:
+Technology / Digital Solutions / Creative Innovation
+
+Main goals:
+- Build trust
+- Showcase services
+- Present company professionally
+- Generate leads/contact inquiries
+
+Pages required:
+1. Home
+2. About Us
+3. Services
+4. Portfolio / Projects
+5. Contact
+
+Homepage sections:
+- Hero section with strong headline and CTA
+- Trusted company / statistics section
+- Services overview cards
+- Why choose us
+- Featured projects / portfolio
+- Process / workflow section
+- Testimonials
+- CTA banner
+- Footer with contact information
+
+Services examples:
+- Web Development
+- Cloud Solutions
+- AI Automation
+- Digital Transformation
+- UI/UX Design
+- System Integration
+
+Requirements:
+- Use modern gradients subtly
+- Rounded corners
+- Professional icon usage
+- Sticky transparent navbar
+- Animated hover effects
+- Beautiful mobile menu
+- Elegant footer
+- Responsive grid layout
+- Accessibility friendly
+
+Create production-quality UI components.
+Avoid generic template appearance.
+Make the design look unique, premium, and enterprise-grade.
+
+Use placeholder images from Unsplash where necessary.
+
+Add realistic professional copywriting for all sections.
+
+Include:
+- favicon support
+- SEO metadata
+- OpenGraph metadata
+- clean folder structure
+
+Output complete working codebase.
