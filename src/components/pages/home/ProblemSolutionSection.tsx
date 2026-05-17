@@ -11,31 +11,29 @@ export function ProblemSolutionSection({ copy }: HomeSectionProps<"problem-state
     <section
       id="problem-statement"
       aria-label={copy.ariaLabel}
-      className="bg-background py-16 md:py-24"
+      className="bg-background py-12 sm:py-16 md:py-24"
     >
       <Container>
         <article
           className={cn(
             "relative grid overflow-hidden rounded-lg border border-border shadow-[0_8px_30px_rgba(15,23,42,0.08)]",
-            "md:min-h-[300px] md:grid-cols-2",
+            "md:min-h-[280px] md:grid-cols-2 lg:min-h-[300px]",
           )}
         >
           <div
             className={cn(
-              "relative flex flex-col justify-between gap-10",
-              "bg-[#2a2a2e] p-8 text-white md:gap-12 md:p-10 lg:p-12",
+              "relative flex flex-col justify-between gap-6",
+              "bg-[#2a2a2e] p-5 text-white sm:gap-8 sm:p-6 md:gap-10 md:p-10 lg:gap-12 lg:p-12",
             )}
           >
-            {/* Mobile: notch ke bawah menuju kolom solusi */}
             <span
               className={cn(
                 "pointer-events-none absolute bottom-0 left-1/2 z-20 md:hidden",
                 "h-0 w-0 -translate-x-1/2 translate-y-full",
-                "border-x-[16px] border-t-[18px] border-x-transparent border-t-[#2a2a2e]",
+                "border-x-[14px] border-t-[16px] border-x-transparent border-t-[#2a2a2e] sm:border-x-[16px] sm:border-t-[18px]",
               )}
               aria-hidden
             />
-            {/* Desktop: notch ke kanan */}
             <span
               className={cn(
                 "pointer-events-none absolute right-0 top-1/2 z-20 hidden -translate-y-1/2 md:block",
@@ -44,27 +42,56 @@ export function ProblemSolutionSection({ copy }: HomeSectionProps<"problem-state
               )}
               aria-hidden
             />
-            <div className="relative z-[1] max-w-md pr-20 md:pr-28">
-              <h2 className="font-heading text-xl font-bold leading-snug md:text-2xl lg:text-[1.65rem]">
+            <div className="relative z-[1] flex min-w-0 items-start gap-3 sm:gap-4">
+              <h2
+                className={cn(
+                  "min-w-0 flex-1 font-heading text-balance text-[1.75rem] font-bold leading-snug",
+                  "sm:text-[1.875rem] md:text-[2rem] lg:text-[2.5rem] lg:leading-tight",
+                )}
+              >
                 {copy.problemHeadline}
               </h2>
+              <ProblemEnvelopeIcon
+                className={cn(
+                  "h-14 w-[3.75rem] shrink-0 sm:h-[4.5rem] sm:w-[5.5rem]",
+                  "md:h-20 md:w-24 lg:h-24 lg:w-28",
+                )}
+              />
             </div>
-            <ProblemEnvelopeIcon className="pointer-events-none absolute right-4 top-4 h-20 w-24 md:right-6 md:top-6 md:h-24 md:w-28" />
           </div>
 
           <div
             className={cn(
-              "relative flex flex-col justify-between gap-10",
-              "bg-white p-8 text-slate-900 md:gap-12 md:p-10 lg:p-12",
+              "relative flex flex-col justify-between gap-6",
+              "bg-white p-5 text-slate-900 sm:gap-8 sm:p-6 md:gap-10 md:p-10 lg:gap-12 lg:p-12",
             )}
           >
-            <div className="relative z-[1] max-w-md pr-20 md:pr-28">
-              <h2 className="font-heading text-xl font-bold leading-snug text-slate-900 md:text-2xl lg:text-[1.65rem]">
-                {copy.solutionHeadline}
-              </h2>
-              <p className="mt-4 text-base leading-relaxed text-slate-600 md:text-lg">{copy.solutionBody}</p>
+            <div className="relative z-[1] flex min-w-0 items-start gap-3 sm:gap-4">
+              <div className="min-w-0 flex-1">
+                <h2
+                  className={cn(
+                    "font-heading text-balance text-[1.75rem] font-bold leading-snug text-slate-900",
+                    "sm:text-[1.875rem] md:text-[2rem] lg:text-[2.5rem] lg:leading-tight",
+                  )}
+                >
+                  {copy.solutionHeadline}
+                </h2>
+                <p
+                  className={cn(
+                    "mt-3 text-pretty text-sm leading-relaxed text-slate-600",
+                    "sm:mt-4 sm:text-base md:mt-5 md:text-lg",
+                  )}
+                >
+                  {copy.solutionBody}
+                </p>
+              </div>
+              <SolutionRocketIcon
+                className={cn(
+                  "h-16 w-16 shrink-0 sm:h-20 sm:w-20",
+                  "md:h-24 md:w-24 lg:h-28 lg:w-28",
+                )}
+              />
             </div>
-            <SolutionRocketIcon className="pointer-events-none absolute right-2 top-2 h-24 w-24 md:right-4 md:top-4 md:h-28 md:w-28" />
           </div>
         </article>
       </Container>

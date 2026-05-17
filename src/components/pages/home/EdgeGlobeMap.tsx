@@ -5,6 +5,7 @@ import {
   edgeGlobeNodePositionsList,
 } from "@/data/edge-globe";
 import { GLOBAL_MAP_IMAGE } from "@/data/edge-map";
+import { cn } from "@/lib/utils";
 
 type EdgeNodeCopy = {
   id: string;
@@ -15,9 +16,10 @@ type EdgeNodeCopy = {
 type EdgeGlobeMapProps = {
   ariaLabel: string;
   nodes: readonly EdgeNodeCopy[];
+  className?: string;
 };
 
-export function EdgeGlobeMap({ ariaLabel, nodes }: EdgeGlobeMapProps) {
+export function EdgeGlobeMap({ ariaLabel, nodes, className }: EdgeGlobeMapProps) {
   const positionById = new Map(edgeGlobeNodePositionsList.map((node) => [node.id, node]));
 
   const resolvedNodes = nodes
@@ -43,7 +45,7 @@ export function EdgeGlobeMap({ ariaLabel, nodes }: EdgeGlobeMapProps) {
   const { width, height } = EDGE_GLOBE_VIEWBOX;
 
   return (
-    <div className="edge-globe-wrap">
+    <div className={cn("edge-globe-wrap", className)}>
       <div className="edge-globe-stage" style={{ aspectRatio: `${width} / ${height}` }}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
@@ -55,6 +57,7 @@ export function EdgeGlobeMap({ ariaLabel, nodes }: EdgeGlobeMapProps) {
           decoding="async"
           draggable={false}
           aria-hidden
+          fetchPriority="low"
         />
 
         <svg

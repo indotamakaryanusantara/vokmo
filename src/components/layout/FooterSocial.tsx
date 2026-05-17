@@ -37,7 +37,7 @@ export async function FooterSocial({ className }: { className?: string }) {
   const socialLinks = getFooterSocial(locale);
 
   return (
-    <ul className={cn("flex items-center gap-3", className)}>
+    <ul className={cn("flex flex-wrap items-center gap-2.5 sm:gap-3", className)}>
       {socialLinks.map((item) => {
         const Icon = iconMap[item.icon];
         return (
@@ -47,7 +47,7 @@ export async function FooterSocial({ className }: { className?: string }) {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={item.label}
-              className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-border bg-white text-slate-700 transition-colors hover:border-primary/30 hover:text-primary"
+              className="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-border bg-white text-slate-700 transition-colors hover:border-primary/30 hover:text-nav-hover focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-nav-hover sm:h-10 sm:w-10"
             >
               <Icon className="h-4 w-4" />
             </a>

@@ -27,6 +27,7 @@ function TrustMarqueeGroup({ duplicate }: TrustMarqueeGroupProps) {
             loading="lazy"
             decoding="async"
             className="trust-marquee-logo"
+            draggable={false}
           />
         </li>
       ))}

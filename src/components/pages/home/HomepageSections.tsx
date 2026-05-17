@@ -5,7 +5,6 @@ import {
   HeroSection,
   InfrastructureSpecs,
   ScaleAndHygiene,
-  TrustBarSection,
   ProblemSolutionSection,
   SolutionOverviewSection,
   DeliverabilityProofSection,
@@ -56,11 +55,13 @@ export async function HomepageSections() {
         const copy = dict.home.sections[sectionId];
 
         if (sectionId === "hero") {
-          return <HeroSection key={section.id} copy={dict.home.sections.hero} />;
-        }
-
-        if (sectionId === "trust-bar") {
-          return <TrustBarSection key={section.id} copy={dict.home.sections["trust-bar"]} />;
+          return (
+            <HeroSection
+              key={section.id}
+              copy={dict.home.sections.hero}
+              trustBar={dict.home.sections["trust-bar"]}
+            />
+          );
         }
 
         if (sectionId === "problem-statement") {

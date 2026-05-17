@@ -39,7 +39,7 @@ export function FaqAccordion({ items }: FaqAccordionProps) {
                 aria-controls={panelId}
                 onClick={() => setOpenId(isOpen ? null : item.id)}
               >
-                <span className="faq-accordion__question">{item.question}</span>
+                <span className="faq-accordion__question text-pretty">{item.question}</span>
                 <span className={cn("faq-accordion__toggle", isOpen && "faq-accordion__toggle--open")} aria-hidden>
                   <Plus className="faq-accordion__toggle-icon" strokeWidth={2.25} />
                 </span>
@@ -53,7 +53,7 @@ export function FaqAccordion({ items }: FaqAccordionProps) {
               inert={!isOpen}
             >
               <div className="faq-accordion__panel-inner">
-                <p className="faq-accordion__answer">{item.answer}</p>
+                <p className="faq-accordion__answer text-pretty">{item.answer}</p>
               </div>
             </div>
           </article>

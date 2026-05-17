@@ -16,25 +16,28 @@ export function HeroVisual({ alt, placeholderHint, className }: HeroVisualProps)
 
   if (hasError) {
     return (
-      <p className={cn("text-center text-xs text-muted lg:text-left", className)}>
+      <p className={cn("px-1 text-center text-xs leading-relaxed text-muted sm:text-sm md:text-left", className)}>
         {placeholderHint}{" "}
-        <code className="font-mono text-foreground">public/images/home/hero-right-1.png</code>
+        <code className="font-mono text-[0.7rem] text-foreground sm:text-xs">public/images/home/hero-right-1.png</code>
       </p>
     );
   }
 
   return (
-    <div className={cn("w-full", className)}>
-      <Image
-        src={homeImages.hero}
-        alt={alt}
-        width={2835}
-        height={1890}
-        priority
-        sizes="(max-width: 1024px) 100vw, 55vw"
-        className="h-auto w-full max-w-full"
-        onError={() => setHasError(true)}
-      />
+    <div className={cn("hero-visual", className)}>
+      <div className="hero-visual__frame">
+        <Image
+          src={homeImages.hero}
+          alt={alt}
+          width={2835}
+          height={1890}
+          priority
+          unoptimized
+          sizes="(max-width: 1024px) 100vw, 55vw"
+          className="h-auto w-full max-w-full"
+          onError={() => setHasError(true)}
+        />
+      </div>
     </div>
   );
 }
