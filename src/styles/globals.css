@@ -168,3 +168,780 @@ body {
     animation-play-state: running;
   }
 }
+
+/* List hygiene — 4-step chip loop (pure CSS, no JS) */
+:root {
+  --hygiene-step-cycle: 12s;
+}
+
+.hygiene-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@media (min-width: 640px) {
+  .hygiene-steps {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+.hygiene-step-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  padding: 0.625rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--muted);
+  opacity: 0.55;
+  transition:
+    color 0.35s ease,
+    border-color 0.35s ease,
+    background-color 0.35s ease,
+    box-shadow 0.35s ease,
+    opacity 0.35s ease;
+}
+
+.hygiene-step-chip__index {
+  display: inline-flex;
+  height: 1.5rem;
+  width: 1.5rem;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  background: var(--background-muted);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+.hygiene-step-chip--1 {
+  animation: hygiene-chip-step-1 var(--hygiene-step-cycle) ease-in-out infinite;
+}
+
+.hygiene-step-chip--2 {
+  animation: hygiene-chip-step-2 var(--hygiene-step-cycle) ease-in-out infinite;
+}
+
+.hygiene-step-chip--3 {
+  animation: hygiene-chip-step-3 var(--hygiene-step-cycle) ease-in-out infinite;
+}
+
+.hygiene-step-chip--4 {
+  animation: hygiene-chip-step-4 var(--hygiene-step-cycle) ease-in-out infinite;
+}
+
+@keyframes hygiene-chip-step-1 {
+  0%,
+  18% {
+    opacity: 1;
+    border-color: var(--primary);
+    color: var(--foreground);
+    box-shadow: 0 0 20px rgba(255, 0, 255, 0.22);
+    background: rgba(255, 0, 255, 0.06);
+  }
+  22%,
+  100% {
+    opacity: 0.55;
+    border-color: var(--border);
+    color: var(--muted);
+    box-shadow: none;
+    background: var(--surface);
+  }
+}
+
+@keyframes hygiene-chip-step-2 {
+  0%,
+  23% {
+    opacity: 0.55;
+    border-color: var(--border);
+    color: var(--muted);
+    box-shadow: none;
+    background: var(--surface);
+  }
+  25%,
+  43% {
+    opacity: 1;
+    border-color: var(--primary);
+    color: var(--foreground);
+    box-shadow: 0 0 20px rgba(255, 0, 255, 0.22);
+    background: rgba(255, 0, 255, 0.06);
+  }
+  47%,
+  100% {
+    opacity: 0.55;
+    border-color: var(--border);
+    color: var(--muted);
+    box-shadow: none;
+    background: var(--surface);
+  }
+}
+
+@keyframes hygiene-chip-step-3 {
+  0%,
+  48% {
+    opacity: 0.55;
+    border-color: var(--border);
+    color: var(--muted);
+    box-shadow: none;
+    background: var(--surface);
+  }
+  50%,
+  68% {
+    opacity: 1;
+    border-color: var(--primary);
+    color: var(--foreground);
+    box-shadow: 0 0 20px rgba(255, 0, 255, 0.22);
+    background: rgba(255, 0, 255, 0.06);
+  }
+  72%,
+  100% {
+    opacity: 0.55;
+    border-color: var(--border);
+    color: var(--muted);
+    box-shadow: none;
+    background: var(--surface);
+  }
+}
+
+@keyframes hygiene-chip-step-4 {
+  0%,
+  73% {
+    opacity: 0.55;
+    border-color: var(--border);
+    color: var(--muted);
+    box-shadow: none;
+    background: var(--surface);
+  }
+  75%,
+  93% {
+    opacity: 1;
+    border-color: var(--primary);
+    color: var(--foreground);
+    box-shadow: 0 0 20px rgba(255, 0, 255, 0.22);
+    background: rgba(255, 0, 255, 0.06);
+  }
+  97%,
+  100% {
+    opacity: 0.55;
+    border-color: var(--border);
+    color: var(--muted);
+    box-shadow: none;
+    background: var(--surface);
+  }
+}
+
+@keyframes hygiene-chip-index-1 {
+  0%,
+  18% {
+    background: var(--primary);
+    color: white;
+  }
+  22%,
+  100% {
+    background: var(--background-muted);
+    color: var(--muted);
+  }
+}
+
+.hygiene-step-chip--1 .hygiene-step-chip__index {
+  animation: hygiene-chip-index-1 var(--hygiene-step-cycle) ease-in-out infinite;
+}
+
+@keyframes hygiene-chip-index-2 {
+  0%,
+  23% {
+    background: var(--background-muted);
+    color: var(--muted);
+  }
+  25%,
+  43% {
+    background: var(--primary);
+    color: white;
+  }
+  47%,
+  100% {
+    background: var(--background-muted);
+    color: var(--muted);
+  }
+}
+
+.hygiene-step-chip--2 .hygiene-step-chip__index {
+  animation: hygiene-chip-index-2 var(--hygiene-step-cycle) ease-in-out infinite;
+}
+
+@keyframes hygiene-chip-index-3 {
+  0%,
+  48% {
+    background: var(--background-muted);
+    color: var(--muted);
+  }
+  50%,
+  68% {
+    background: var(--primary);
+    color: white;
+  }
+  72%,
+  100% {
+    background: var(--background-muted);
+    color: var(--muted);
+  }
+}
+
+.hygiene-step-chip--3 .hygiene-step-chip__index {
+  animation: hygiene-chip-index-3 var(--hygiene-step-cycle) ease-in-out infinite;
+}
+
+@keyframes hygiene-chip-index-4 {
+  0%,
+  73% {
+    background: var(--background-muted);
+    color: var(--muted);
+  }
+  75%,
+  93% {
+    background: var(--primary);
+    color: white;
+  }
+  97%,
+  100% {
+    background: var(--background-muted);
+    color: var(--muted);
+  }
+}
+
+.hygiene-step-chip--4 .hygiene-step-chip__index {
+  animation: hygiene-chip-index-4 var(--hygiene-step-cycle) ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hygiene-step-chip--1,
+  .hygiene-step-chip--2,
+  .hygiene-step-chip--3,
+  .hygiene-step-chip--4,
+  .hygiene-step-chip--1 .hygiene-step-chip__index,
+  .hygiene-step-chip--2 .hygiene-step-chip__index,
+  .hygiene-step-chip--3 .hygiene-step-chip__index,
+  .hygiene-step-chip--4 .hygiene-step-chip__index {
+    animation: none;
+  }
+
+  .hygiene-step-chip--1 {
+    opacity: 1;
+    border-color: var(--primary);
+    color: var(--foreground);
+    box-shadow: 0 0 20px rgba(255, 0, 255, 0.22);
+    background: rgba(255, 0, 255, 0.06);
+  }
+
+  .hygiene-step-chip--1 .hygiene-step-chip__index {
+    background: var(--primary);
+    color: white;
+  }
+}
+
+/* CSV upload simulation (CSS — no After Effects / Lottie required) */
+:root {
+  --list-hygiene-sim-cycle: 10s;
+}
+
+.list-hygiene-sim {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: linear-gradient(160deg, #f8fafc 0%, #f1f5f9 45%, #eef2ff 100%);
+  padding: 1.5rem;
+}
+
+.list-hygiene-sim__glow {
+  position: absolute;
+  left: 50%;
+  top: 42%;
+  height: 12rem;
+  width: 12rem;
+  --tw-translate-x: -50%;
+  --tw-translate-y: -50%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y));
+  border-radius: 9999px;
+  background: radial-gradient(circle, rgba(255, 0, 255, 0.14) 0%, transparent 70%);
+  animation: list-hygiene-sim-glow var(--list-hygiene-sim-cycle) ease-in-out infinite;
+}
+
+.list-hygiene-sim__panel {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  width: 100%;
+  max-width: 20rem;
+  flex-direction: column;
+  gap: 0.875rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: white;
+  padding: 1rem 1.125rem 1.125rem;
+  box-shadow: 0 12px 40px rgba(15, 23, 42, 0.08);
+}
+
+.list-hygiene-sim__upload-badge {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  gap: 0.375rem;
+  border-radius: 6px;
+  background: rgba(255, 0, 255, 0.08);
+  padding: 0.25rem 0.625rem;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--nav-hover);
+  opacity: 0;
+  animation: list-hygiene-sim-fade-in var(--list-hygiene-sim-cycle) ease-out infinite;
+}
+
+.list-hygiene-sim__file {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  opacity: 0;
+  transform: translateY(-12px) scale(0.92);
+  animation: list-hygiene-sim-file-drop var(--list-hygiene-sim-cycle) cubic-bezier(0.34, 1.2, 0.64, 1) infinite;
+}
+
+.list-hygiene-sim__file-icon {
+  height: 2.5rem;
+  width: 2.5rem;
+  flex-shrink: 0;
+  color: var(--primary);
+}
+
+.list-hygiene-sim__file-meta {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 0.125rem;
+}
+
+.list-hygiene-sim__file-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--foreground);
+}
+
+.list-hygiene-sim__file-size {
+  font-size: 0.6875rem;
+  color: var(--muted);
+}
+
+.list-hygiene-sim__progress-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+  opacity: 0;
+  animation: list-hygiene-sim-progress-show var(--list-hygiene-sim-cycle) ease-out infinite;
+}
+
+.list-hygiene-sim__progress-track {
+  height: 0.5rem;
+  overflow: hidden;
+  border-radius: 9999px;
+  background: var(--background-muted);
+}
+
+.list-hygiene-sim__progress-fill {
+  height: 100%;
+  width: 0%;
+  border-radius: 9999px;
+  background: linear-gradient(90deg, var(--success) 0%, #34d399 100%);
+  animation: list-hygiene-sim-progress-fill var(--list-hygiene-sim-cycle) ease-in-out infinite;
+}
+
+.list-hygiene-sim__progress-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  font-size: 0.6875rem;
+}
+
+.list-hygiene-sim__progress-pct {
+  font-weight: 700;
+  color: var(--success);
+}
+
+.list-hygiene-sim__progress-pct::after {
+  content: "0%";
+  animation: list-hygiene-sim-pct-text var(--list-hygiene-sim-cycle) steps(1) infinite;
+}
+
+.list-hygiene-sim__progress-status {
+  color: var(--muted);
+  animation: list-hygiene-sim-status-text var(--list-hygiene-sim-cycle) steps(1) infinite;
+}
+
+.list-hygiene-sim__rows {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+  min-height: 4.5rem;
+}
+
+.list-hygiene-sim__row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  opacity: 0;
+  transform: translateX(-8px);
+  animation: list-hygiene-sim-row-in var(--list-hygiene-sim-cycle) ease-out infinite;
+  animation-delay: calc(0.12s * var(--row-i, 0));
+}
+
+.list-hygiene-sim__row-dot {
+  height: 0.375rem;
+  width: 0.375rem;
+  flex-shrink: 0;
+  border-radius: 9999px;
+  background: var(--primary);
+}
+
+.list-hygiene-sim__row-line {
+  display: block;
+  height: 0.375rem;
+  flex: 1;
+  border-radius: 4px;
+  background: linear-gradient(90deg, #e2e8f0 0%, #f1f5f9 100%);
+}
+
+.list-hygiene-sim__row:nth-child(1) .list-hygiene-sim__row-line {
+  max-width: 88%;
+}
+.list-hygiene-sim__row:nth-child(2) .list-hygiene-sim__row-line {
+  max-width: 72%;
+}
+.list-hygiene-sim__row:nth-child(3) .list-hygiene-sim__row-line {
+  max-width: 94%;
+}
+.list-hygiene-sim__row:nth-child(4) .list-hygiene-sim__row-line {
+  max-width: 65%;
+}
+.list-hygiene-sim__row:nth-child(5) .list-hygiene-sim__row-line {
+  max-width: 80%;
+}
+.list-hygiene-sim__row:nth-child(6) .list-hygiene-sim__row-line {
+  max-width: 58%;
+}
+.list-hygiene-sim__row:nth-child(7) .list-hygiene-sim__row-line {
+  max-width: 76%;
+}
+
+.list-hygiene-sim__counter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.125rem;
+  border-radius: 8px;
+  border: 1px solid rgba(5, 150, 105, 0.25);
+  background: rgba(5, 150, 105, 0.06);
+  padding: 0.5rem;
+  opacity: 0;
+  transform: scale(0.96);
+  animation: list-hygiene-sim-counter var(--list-hygiene-sim-cycle) ease-out infinite;
+}
+
+.list-hygiene-sim__counter-value {
+  font-family: var(--font-heading);
+  font-size: 1.375rem;
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--success);
+}
+
+.list-hygiene-sim__counter-label {
+  font-size: 0.625rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.list-hygiene-sim__complete {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  color: var(--success);
+  opacity: 0;
+  animation: list-hygiene-sim-complete var(--list-hygiene-sim-cycle) ease-out infinite;
+}
+
+.list-hygiene-sim__complete-check {
+  position: relative;
+  height: 1rem;
+  width: 1rem;
+  border-radius: 9999px;
+  background: var(--success);
+}
+
+.list-hygiene-sim__complete-check::after {
+  content: "";
+  position: absolute;
+  left: 0.3rem;
+  top: 0.2rem;
+  height: 0.35rem;
+  width: 0.2rem;
+  border-right: 2px solid white;
+  border-bottom: 2px solid white;
+  transform: rotate(45deg);
+}
+
+@keyframes list-hygiene-sim-glow {
+  0%,
+  12% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+  28%,
+  72% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  88%,
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.9);
+  }
+}
+
+@keyframes list-hygiene-sim-fade-in {
+  0%,
+  4% {
+    opacity: 0;
+  }
+  8%,
+  88% {
+    opacity: 1;
+  }
+  96%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes list-hygiene-sim-file-drop {
+  0%,
+  6% {
+    opacity: 0;
+    transform: translateY(-12px) scale(0.92);
+  }
+  14%,
+  86% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  94%,
+  100% {
+    opacity: 0;
+    transform: translateY(6px) scale(0.96);
+  }
+}
+
+@keyframes list-hygiene-sim-progress-show {
+  0%,
+  14% {
+    opacity: 0;
+  }
+  20%,
+  86% {
+    opacity: 1;
+  }
+  94%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes list-hygiene-sim-progress-fill {
+  0%,
+  18% {
+    width: 0%;
+  }
+  52% {
+    width: 100%;
+  }
+  86% {
+    width: 100%;
+  }
+  94%,
+  100% {
+    width: 0%;
+  }
+}
+
+@keyframes list-hygiene-sim-pct-text {
+  0%,
+  18% {
+    content: "0%";
+  }
+  28% {
+    content: "24%";
+  }
+  36% {
+    content: "51%";
+  }
+  44% {
+    content: "78%";
+  }
+  52%,
+  86% {
+    content: "100%";
+  }
+  94%,
+  100% {
+    content: "0%";
+  }
+}
+
+@keyframes list-hygiene-sim-status-text {
+  0%,
+  18% {
+    content: "";
+  }
+  20%,
+  34% {
+    content: "Reading CSV…";
+  }
+  36%,
+  50% {
+    content: "Parsing rows…";
+  }
+  52%,
+  72% {
+    content: "Validating schema…";
+  }
+  74%,
+  86% {
+    content: "Queue complete";
+  }
+  94%,
+  100% {
+    content: "";
+  }
+}
+
+.list-hygiene-sim__progress-status {
+  font-size: 0;
+}
+
+.list-hygiene-sim__progress-status::after {
+  font-size: 0.6875rem;
+  color: var(--muted);
+  animation: list-hygiene-sim-status-text var(--list-hygiene-sim-cycle) steps(1) infinite;
+}
+
+.list-hygiene-sim__progress-pct {
+  font-size: 0;
+}
+
+@keyframes list-hygiene-sim-row-in {
+  0%,
+  38% {
+    opacity: 0;
+    transform: translateX(-8px);
+  }
+  48%,
+  84% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  92%,
+  100% {
+    opacity: 0;
+    transform: translateX(6px);
+  }
+}
+
+@keyframes list-hygiene-sim-counter {
+  0%,
+  58% {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  66%,
+  84% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  92%,
+  100% {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+}
+
+@keyframes list-hygiene-sim-complete {
+  0%,
+  72% {
+    opacity: 0;
+  }
+  78%,
+  86% {
+    opacity: 1;
+  }
+  94%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .list-hygiene-sim__glow,
+  .list-hygiene-sim__upload-badge,
+  .list-hygiene-sim__file,
+  .list-hygiene-sim__progress-wrap,
+  .list-hygiene-sim__progress-fill,
+  .list-hygiene-sim__progress-pct::after,
+  .list-hygiene-sim__progress-status::after,
+  .list-hygiene-sim__row,
+  .list-hygiene-sim__counter,
+  .list-hygiene-sim__complete {
+    animation: none;
+  }
+
+  .list-hygiene-sim__upload-badge,
+  .list-hygiene-sim__file,
+  .list-hygiene-sim__progress-wrap,
+  .list-hygiene-sim__row,
+  .list-hygiene-sim__counter,
+  .list-hygiene-sim__complete {
+    opacity: 1;
+    transform: none;
+  }
+
+  .list-hygiene-sim__progress-fill {
+    width: 100%;
+  }
+
+  .list-hygiene-sim__progress-pct::after {
+    content: "100%";
+  }
+
+  .list-hygiene-sim__progress-status::after {
+    content: "Queue complete";
+  }
+}

@@ -19,7 +19,7 @@ const sectionBlueprint: Array<{
   { id: "trust-bar", component: "TrustBarSection", ready: true },
   { id: "problem-statement", component: "ProblemSolutionSection", ready: true },
   { id: "solution-overview", ready: false },
-  { id: "scale-and-hygiene", component: "ScaleAndHygiene", ready: false },
+  { id: "scale-and-hygiene", component: "ScaleAndHygiene", ready: true },
   { id: "infrastructure-specs", component: "InfrastructureSpecs", ready: false },
   { id: "developer-edge-api", component: "DeveloperEdgeAPI", ready: false },
   { id: "platform-personas", ready: false },

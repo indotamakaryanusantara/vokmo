@@ -16,7 +16,6 @@ import type { ComponentType } from "react";
 import type { HomeSectionProps } from "@/types/home";
 
 const sectionComponents: Record<string, ComponentType<HomeSectionProps>> = {
-  ScaleAndHygiene,
   DeveloperEdgeAPI,
   InfrastructureSpecs,
 };
@@ -64,6 +63,12 @@ export async function HomepageSections() {
         if (sectionId === "problem-statement") {
           return (
             <ProblemSolutionSection key={section.id} copy={dict.home.sections["problem-statement"]} />
+          );
+        }
+
+        if (sectionId === "scale-and-hygiene") {
+          return (
+            <ScaleAndHygiene key={section.id} copy={dict.home.sections["scale-and-hygiene"]} />
           );
         }
 
