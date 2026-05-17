@@ -5,10 +5,25 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const base = site.url;
   const lastModified = new Date();
 
-  return [
-    { url: base, lastModified, changeFrequency: "weekly", priority: 1 },
-    { url: `${base}/about`, lastModified, changeFrequency: "monthly", priority: 0.7 },
-    { url: `${base}/services/deliverability`, lastModified, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${base}/services/smtp-server`, lastModified, changeFrequency: "monthly", priority: 0.8 },
+  const paths = [
+    "",
+    "/about",
+    "/products",
+    "/integrations",
+    "/docs/api",
+    "/webhooks",
+    "/status",
+    "/deliverability",
+    "/pricing",
+    "/login",
+    "/signup",
+    "/legal",
   ];
+
+  return paths.map((path, index) => ({
+    url: `${base}${path}`,
+    lastModified,
+    changeFrequency: path === "" ? "weekly" : "monthly",
+    priority: path === "" ? 1 : path === "/pricing" || path === "/products" ? 0.8 : 0.6,
+  }));
 }

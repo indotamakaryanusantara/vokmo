@@ -1,23 +1,18 @@
 # VOKMO
 
-Situs perusahaan (Next.js App Router) untuk infrastruktur email enterprise—profil teknis, layanan SMTP/deliverability, dan lead capture.
+Situs & platform infrastruktur email enterprise (Next.js App Router, Cloudflare Pages + D1).
 
-## Pengembangan lokal
+## Pengembangan
 
 ```bash
 npm install
 npm run dev
 ```
 
-Buka `http://localhost:3000`.
+## Homepage (14 section)
 
-## Build produksi
-
-```bash
-npm run build
-npm start
-```
+Blueprint section ada di `src/data/homepage-content.ts`. Set `ready: true` per section lalu implementasi komponen di `src/components/pages/home/`.
 
 ## Deploy
 
-Dioptimalkan untuk **Cloudflare Pages** (edge-friendly, minim dependensi native Node).
+Target: **Cloudflare Pages** (`@cloudflare/next-on-pages`).

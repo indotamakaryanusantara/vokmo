@@ -1,6 +1,9 @@
-import { getOrganizationJsonLd } from "@/config/seo/organization";
-import { site } from "@/config/site";
+import { site, getOrganizationJsonLd } from "@/config/site";
 import { JsonLd } from "@/components/seo/JsonLd";
+import { LocaleProvider } from "@/components/providers/LocaleProvider";
+import { getDictionary } from "@/lib/i18n/dictionaries";
+import { getLocale } from "@/lib/i18n/server";
+import { localeToHtmlLang } from "@/lib/i18n/locale";
 import type { Metadata } from "next";
 import { Inter, Montserrat } from "next/font/google";
 import "@/styles/globals.css";
@@ -17,38 +20,40 @@ const inter = Inter({
   display: "swap",
 });
 
-export const metadata: Metadata = {
-  metadataBase: new URL(site.url),
-  title: {
-    default: `${site.name} — Infrastruktur Email Enterprise`,
-    template: `%s | ${site.name}`,
-  },
-  description: site.description,
-  openGraph: {
-    title: `${site.name} — Infrastruktur Email Enterprise`,
-    description: site.description,
-    url: site.url,
-    siteName: site.name,
-    locale: site.locale,
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: `${site.name} — Infrastruktur Email Enterprise`,
-    description: site.description,
-  },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const locale = await getLocale();
+  const dict = getDictionary(locale);
 
-export default function RootLayout({
+  return {
+    metadataBase: new URL(site.url),
+    title: {
+      default: `${site.name} — ${dict.site.defaultTitle}`,
+      template: `%s | ${site.name}`,
+    },
+    description: dict.site.description,
+    openGraph: {
+      title: `${site.name} — ${dict.site.defaultTitle}`,
+      description: dict.site.description,
+      url: site.url,
+      siteName: site.name,
+      locale: locale === "id" ? "id_ID" : "en_US",
+      type: "website",
+    },
+  };
+}
+
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const locale = await getLocale();
+
   return (
-    <html lang="id" className={`${montserrat.variable} ${inter.variable} h-full`}>
+    <html lang={localeToHtmlLang(locale)} className={`${montserrat.variable} ${inter.variable} h-full`}>
       <body className="min-h-full bg-background font-sans text-foreground antialiased">
-        <JsonLd data={getOrganizationJsonLd()} />
-        {children}
+        <JsonLd data={getOrganizationJsonLd(locale)} />
+        <LocaleProvider initialLocale={locale}>{children}</LocaleProvider>
       </body>
     </html>
   );
