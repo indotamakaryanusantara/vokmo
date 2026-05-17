@@ -1,4 +1,5 @@
 export { DeveloperEdgeAPI } from "./DeveloperEdgeAPI";
+export { ProblemSolutionSection } from "./ProblemSolutionSection";
 export { TrustBarSection } from "./TrustBarSection";
 export { FinalCTASection } from "./FinalCTASection";
 export { HeroSection } from "./HeroSection";

@@ -77,7 +77,14 @@ const en = {
         ariaLabel: "Trusted by teams worldwide",
         tagline: "Infrastructure of choice for developers and global growth teams.",
       },
-      "problem-statement": { ariaLabel: "Problem statement" },
+      "problem-statement": {
+        ariaLabel: "Problem and solution",
+        problemHeadline:
+          "Frustrated when campaigns stop because of poor IP reputation and spam traps?",
+        solutionHeadline: "Vokmo secures your sending reputation.",
+        solutionBody:
+          "With smart routing and automated DNS monitoring, your emails get priority delivery to the primary Inbox.",
+      },
       "solution-overview": { ariaLabel: "Solution overview" },
       "scale-and-hygiene": { ariaLabel: "Scale and list hygiene" },
       "infrastructure-specs": { ariaLabel: "Infrastructure specifications" },
@@ -224,7 +231,14 @@ const id = {
         ariaLabel: "Dipercaya tim global",
         tagline: "Infrastruktur pilihan bagi developer dan tim growth global.",
       },
-      "problem-statement": { ariaLabel: "Pernyataan masalah" },
+      "problem-statement": {
+        ariaLabel: "Masalah dan solusi",
+        problemHeadline:
+          "Kecewa karena kampanye terhenti akibat reputasi IP yang buruk dan spam trap?",
+        solutionHeadline: "Vokmo mengamankan reputasi pengiriman Anda.",
+        solutionBody:
+          "Dengan perutean pintar dan pemantauan DNS otomatis, email Anda mendapat prioritas masuk ke Inbox utama.",
+      },
       "solution-overview": { ariaLabel: "Ringkasan solusi" },
       "scale-and-hygiene": { ariaLabel: "Skala dan hygiene list" },
       "infrastructure-specs": { ariaLabel: "Spesifikasi infrastruktur" },

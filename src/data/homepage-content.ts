@@ -17,7 +17,7 @@ const sectionBlueprint: Array<{
 }> = [
   { id: "hero", component: "HeroSection", ready: true },
   { id: "trust-bar", component: "TrustBarSection", ready: true },
-  { id: "problem-statement", ready: false },
+  { id: "problem-statement", component: "ProblemSolutionSection", ready: true },
   { id: "solution-overview", ready: false },
   { id: "scale-and-hygiene", component: "ScaleAndHygiene", ready: false },
   { id: "infrastructure-specs", component: "InfrastructureSpecs", ready: false },
