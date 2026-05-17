@@ -1,6 +1,7 @@
 import { site, getOrganizationJsonLd } from "@/config/site";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { LocaleProvider } from "@/components/providers/LocaleProvider";
+import { SameRouteClickHandler } from "@/components/providers/SameRouteClickHandler";
 import { getDictionary } from "@/lib/i18n/dictionaries";
 import { getLocale } from "@/lib/i18n/server";
 import { localeToHtmlLang } from "@/lib/i18n/locale";
@@ -53,7 +54,10 @@ export default async function RootLayout({
     <html lang={localeToHtmlLang(locale)} className={`${montserrat.variable} ${inter.variable} h-full`}>
       <body className="min-h-full bg-background font-sans text-foreground antialiased">
         <JsonLd data={getOrganizationJsonLd(locale)} />
-        <LocaleProvider initialLocale={locale}>{children}</LocaleProvider>
+        <LocaleProvider initialLocale={locale}>
+          <SameRouteClickHandler />
+          {children}
+        </LocaleProvider>
       </body>
     </html>
   );
