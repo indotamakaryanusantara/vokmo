@@ -7,6 +7,8 @@ import {
   ScaleAndHygiene,
   TrustBarSection,
   ProblemSolutionSection,
+  SolutionOverviewSection,
+  DeliverabilityProofSection,
 } from "@/components/pages/home";
 import { Container } from "@/components/shared/Container";
 import { Section } from "@/components/shared/Section";
@@ -69,6 +71,18 @@ export async function HomepageSections() {
         if (sectionId === "scale-and-hygiene") {
           return (
             <ScaleAndHygiene key={section.id} copy={dict.home.sections["scale-and-hygiene"]} />
+          );
+        }
+
+        if (sectionId === "solution-overview") {
+          return (
+            <SolutionOverviewSection key={section.id} copy={dict.home.sections["solution-overview"]} />
+          );
+        }
+
+        if (sectionId === "deliverability-proof") {
+          return (
+            <DeliverabilityProofSection key={section.id} copy={dict.home.sections["deliverability-proof"]} />
           );
         }
 

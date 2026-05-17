@@ -85,7 +85,6 @@ const en = {
         solutionBody:
           "With smart routing and automated DNS monitoring, your emails get priority delivery to the primary Inbox.",
       },
-      "solution-overview": { ariaLabel: "Solution overview" },
       "scale-and-hygiene": {
         ariaLabel: "Massive scale and list hygiene",
         eyebrow: "4-Step List Hygiene",
@@ -102,12 +101,36 @@ const en = {
           { id: "domain", label: "Domain Validation" },
         ],
       },
+      "solution-overview": {
+        ariaLabel: "Advanced automation and segmentation",
+        eyebrow: "Advanced Automation & Segmentation",
+        headline: "Behavior-Based Automation",
+        body: "Don't just send blasts. Build personal customer journeys based on actions, clicks, and interaction history in real time.",
+        canvasAriaLabel: "Automation workflow: email opened, wait two days, send special offer",
+        nodes: [
+          { id: "trigger", tag: "Trigger", label: "Email Opened" },
+          { id: "wait", tag: "Wait", label: "2 Days" },
+          { id: "action", tag: "Send", label: "Special Offer" },
+        ],
+      },
       "infrastructure-specs": { ariaLabel: "Infrastructure specifications" },
       "developer-edge-api": { ariaLabel: "Developer edge API" },
       "platform-personas": { ariaLabel: "Platform personas" },
       "services-matrix": { ariaLabel: "Services matrix" },
       "pricing-teaser": { ariaLabel: "Pricing teaser" },
-      "deliverability-proof": { ariaLabel: "Deliverability proof" },
+      "deliverability-proof": {
+        ariaLabel: "Deliverability suite",
+        eyebrow: "Deliverability Suite",
+        headline: "Automatic Reputation Protection",
+        body: "We eliminate the complexity of authentication configuration. Our system guides your DNS setup to ensure full compliance with Google and Microsoft strict standards.",
+        shieldLabel: "DNS authentication secured",
+        checklistTitle: "DNS indicators",
+        dnsRecords: [
+          { id: "spf", name: "SPF", status: "Valid" },
+          { id: "dkim", name: "DKIM", status: "Valid" },
+          { id: "dmarc", name: "DMARC", status: "Enforced" },
+        ],
+      },
       workflow: { ariaLabel: "Workflow" },
       faq: { ariaLabel: "Frequently asked questions" },
       "final-cta": {
@@ -254,7 +277,6 @@ const id = {
         solutionBody:
           "Dengan perutean pintar dan pemantauan DNS otomatis, email Anda mendapat prioritas masuk ke Inbox utama.",
       },
-      "solution-overview": { ariaLabel: "Ringkasan solusi" },
       "scale-and-hygiene": {
         ariaLabel: "Skala besar dan hygiene list",
         eyebrow: "Hygiene List 4 Langkah",
@@ -271,12 +293,37 @@ const id = {
           { id: "domain", label: "Domain Validation" },
         ],
       },
+      "solution-overview": {
+        ariaLabel: "Otomatisasi lanjutan dan segmentasi",
+        eyebrow: "Advanced Automation & Segmentation",
+        headline: "Otomatisasi Berbasis Perilaku",
+        body: "Jangan sekadar mengirim blast. Buat perjalanan pelanggan yang personal berdasarkan aksi, klik, dan histori interaksi mereka secara real-time.",
+        canvasAriaLabel:
+          "Alur otomatisasi: email dibuka, tunggu dua hari, kirim penawaran spesial",
+        nodes: [
+          { id: "trigger", tag: "Trigger", label: "Email Dibuka" },
+          { id: "wait", tag: "Tunggu", label: "2 Hari" },
+          { id: "action", tag: "Kirim", label: "Penawaran Spesial" },
+        ],
+      },
       "infrastructure-specs": { ariaLabel: "Spesifikasi infrastruktur" },
       "developer-edge-api": { ariaLabel: "Developer edge API" },
       "platform-personas": { ariaLabel: "Persona platform" },
       "services-matrix": { ariaLabel: "Matriks layanan" },
       "pricing-teaser": { ariaLabel: "Cuplikan pricing" },
-      "deliverability-proof": { ariaLabel: "Bukti deliverability" },
+      "deliverability-proof": {
+        ariaLabel: "Deliverability suite",
+        eyebrow: "Deliverability Suite",
+        headline: "Proteksi Reputasi Otomatis",
+        body: "Kami menghilangkan kerumitan konfigurasi otentikasi. Sistem kami memandu penyiapan DNS Anda untuk memastikan kepatuhan penuh terhadap standar ketat Google dan Microsoft.",
+        shieldLabel: "Otentikasi DNS terlindungi",
+        checklistTitle: "Indikator DNS",
+        dnsRecords: [
+          { id: "spf", name: "SPF", status: "Valid" },
+          { id: "dkim", name: "DKIM", status: "Valid" },
+          { id: "dmarc", name: "DMARC", status: "Enforced" },
+        ],
+      },
       workflow: { ariaLabel: "Alur kerja" },
       faq: { ariaLabel: "Pertanyaan umum" },
       "final-cta": {
