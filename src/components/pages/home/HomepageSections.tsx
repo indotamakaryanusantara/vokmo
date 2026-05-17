@@ -5,6 +5,7 @@ import {
   HeroSection,
   InfrastructureSpecs,
   ScaleAndHygiene,
+  TrustBarSection,
 } from "@/components/pages/home";
 import { Container } from "@/components/shared/Container";
 import { Section } from "@/components/shared/Section";
@@ -53,6 +54,10 @@ export async function HomepageSections() {
 
         if (sectionId === "hero") {
           return <HeroSection key={section.id} copy={dict.home.sections.hero} />;
+        }
+
+        if (sectionId === "trust-bar") {
+          return <TrustBarSection key={section.id} copy={dict.home.sections["trust-bar"]} />;
         }
 
         if (sectionId === "final-cta") {

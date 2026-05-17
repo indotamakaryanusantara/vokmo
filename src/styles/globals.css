@@ -15,12 +15,18 @@
   /* Fixed navbar clearance for first page section */
   --page-section-top: calc(var(--site-header-height) + 3rem);
   --page-section-top-hero: calc(var(--site-header-height) + 3.5rem);
+  --trust-marquee-duration: 80s;
+  --trust-marquee-gap: 3.5rem;
+  --trust-marquee-logo-height: 59px;
+  --trust-marquee-logo-height-hover: 86px;
+  --trust-marquee-slot-height: 86px;
 }
 
 @media (min-width: 768px) {
   :root {
     --page-section-top: calc(var(--site-header-height) + 3.5rem);
     --page-section-top-hero: calc(var(--site-header-height) + 4rem);
+    --trust-marquee-gap: 5rem;
   }
 }
 
@@ -61,4 +67,104 @@ body {
 
 .page-section-top-hero {
   padding-top: var(--page-section-top-hero) !important;
+}
+
+/* Trust bar — pure CSS infinite marquee (duplicated flex groups, no JS) */
+@keyframes trust-marquee-scroll {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.trust-marquee {
+  position: relative;
+  height: var(--trust-marquee-slot-height);
+  width: 100%;
+  overflow: hidden;
+  contain: layout style;
+}
+
+.trust-marquee::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(
+    90deg,
+    var(--background-muted) 0%,
+    transparent 14%,
+    transparent 86%,
+    var(--background-muted) 100%
+  );
+}
+
+.trust-marquee-track {
+  display: flex;
+  width: max-content;
+  height: 100%;
+  align-items: center;
+  gap: var(--trust-marquee-gap);
+  animation: trust-marquee-scroll var(--trust-marquee-duration) linear infinite;
+  backface-visibility: hidden;
+}
+
+.trust-marquee:hover .trust-marquee-track {
+  animation-play-state: paused;
+}
+
+.trust-marquee-group {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: var(--trust-marquee-gap);
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.trust-marquee-item {
+  display: flex;
+  height: var(--trust-marquee-slot-height);
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+}
+
+.trust-marquee-logo {
+  height: var(--trust-marquee-logo-height);
+  width: auto;
+  opacity: 0.8;
+  transform-origin: center center;
+  transition:
+    transform 0.3s ease-out,
+    opacity 0.3s ease-out;
+}
+
+.trust-marquee-item:hover .trust-marquee-logo,
+.trust-marquee-item:focus-within .trust-marquee-logo {
+  opacity: 1;
+  transform: scale(calc(86 / 59));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .trust-marquee-track {
+    animation: none;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--trust-marquee-gap);
+  }
+
+  .trust-marquee-group:last-of-type {
+    display: none;
+  }
+
+  .trust-marquee:hover .trust-marquee-track {
+    animation-play-state: running;
+  }
 }

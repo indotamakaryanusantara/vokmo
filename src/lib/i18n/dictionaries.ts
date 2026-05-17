@@ -73,7 +73,10 @@ const en = {
         imageAlt: "VOKMO high-volume email infrastructure dashboard and delivery metrics",
         imagePlaceholderHint: "Add your hero image at public/images/home/hero-right-1.png",
       },
-      "trust-bar": { ariaLabel: "Trust bar" },
+      "trust-bar": {
+        ariaLabel: "Trusted by teams worldwide",
+        tagline: "Infrastructure of choice for developers and global growth teams.",
+      },
       "problem-statement": { ariaLabel: "Problem statement" },
       "solution-overview": { ariaLabel: "Solution overview" },
       "scale-and-hygiene": { ariaLabel: "Scale and list hygiene" },
@@ -217,7 +220,10 @@ const id = {
         imageAlt: "Dashboard infrastruktur email volume tinggi VOKMO dan metrik pengiriman",
         imagePlaceholderHint: "Letakkan gambar hero di public/images/home/hero-right-1.png",
       },
-      "trust-bar": { ariaLabel: "Trust bar" },
+      "trust-bar": {
+        ariaLabel: "Dipercaya tim global",
+        tagline: "Infrastruktur pilihan bagi developer dan tim growth global.",
+      },
       "problem-statement": { ariaLabel: "Pernyataan masalah" },
       "solution-overview": { ariaLabel: "Ringkasan solusi" },
       "scale-and-hygiene": { ariaLabel: "Skala dan hygiene list" },
