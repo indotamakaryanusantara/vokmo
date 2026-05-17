@@ -10,6 +10,7 @@ import {
   SolutionOverviewSection,
   DeliverabilityProofSection,
   AnalyticsReportingSection,
+  FaqSection,
 } from "@/components/pages/home";
 import { Container } from "@/components/shared/Container";
 import { Section } from "@/components/shared/Section";
@@ -20,7 +21,6 @@ import type { HomeSectionProps } from "@/types/home";
 
 const sectionComponents: Record<string, ComponentType<HomeSectionProps>> = {
   DeveloperEdgeAPI,
-  InfrastructureSpecs,
 };
 
 function renderSection(section: HomepageSectionConfig, copy: HomeSectionProps["copy"]) {
@@ -91,6 +91,16 @@ export async function HomepageSections() {
           return (
             <AnalyticsReportingSection key={section.id} copy={dict.home.sections["analytics-reporting"]} />
           );
+        }
+
+        if (sectionId === "infrastructure-specs") {
+          return (
+            <InfrastructureSpecs key={section.id} copy={dict.home.sections["infrastructure-specs"]} />
+          );
+        }
+
+        if (sectionId === "faq") {
+          return <FaqSection key={section.id} copy={dict.home.sections.faq} />;
         }
 
         if (sectionId === "final-cta") {

@@ -22,13 +22,13 @@ const sectionBlueprint: Array<{
   { id: "solution-overview", component: "SolutionOverviewSection", ready: true },
   { id: "deliverability-proof", component: "DeliverabilityProofSection", ready: true },
   { id: "analytics-reporting", component: "AnalyticsReportingSection", ready: true },
-  { id: "infrastructure-specs", component: "InfrastructureSpecs", ready: false },
+  { id: "infrastructure-specs", component: "InfrastructureSpecs", ready: true },
   { id: "developer-edge-api", component: "DeveloperEdgeAPI", ready: false },
   { id: "platform-personas", ready: false },
   { id: "services-matrix", ready: false },
   { id: "pricing-teaser", ready: false },
   { id: "workflow", ready: false },
-  { id: "faq", ready: false },
+  { id: "faq", component: "FaqSection", ready: true },
   { id: "final-cta", component: "FinalCTASection", ready: true },
 ];
 

@@ -113,7 +113,20 @@ const en = {
           { id: "action", tag: "Send", label: "Special Offer" },
         ],
       },
-      "infrastructure-specs": { ariaLabel: "Infrastructure specifications" },
+      "infrastructure-specs": {
+        ariaLabel: "Global edge infrastructure",
+        eyebrow: "Global Edge Infrastructure",
+        headline: "Global Scale, Local Latency",
+        body: "Powered by high-tier cloud routing, Vokmo separates your promotional and transactional queue paths so both stay instant—even when you are sending millions of newsletters.",
+        globeAriaLabel:
+          "Flat vector world map showing edge server nodes in Singapore, Jakarta, US East, and Europe with pulsing network links",
+        nodes: [
+          { id: "singapore", label: "Singapore", code: "SIN" },
+          { id: "jakarta", label: "Jakarta", code: "CGK" },
+          { id: "us-east", label: "US East", code: "IAD" },
+          { id: "europe", label: "Europe", code: "FRA" },
+        ],
+      },
       "developer-edge-api": { ariaLabel: "Developer edge API" },
       "platform-personas": { ariaLabel: "Platform personas" },
       "services-matrix": { ariaLabel: "Services matrix" },
@@ -171,7 +184,38 @@ const en = {
         ],
       },
       workflow: { ariaLabel: "Workflow" },
-      faq: { ariaLabel: "Frequently asked questions" },
+      faq: {
+        ariaLabel: "Frequently asked questions",
+        eyebrow: "FAQ",
+        headline: "Frequently Asked Questions",
+        body: "Straight answers on billing, Dedicated IP, bounce handling, and separating transactional from marketing traffic.",
+        items: [
+          {
+            id: "volume-billing",
+            question: "How does volume-based billing work?",
+            answer:
+              "Vokmo uses a hybrid model. You choose a monthly plan aligned with your average volume target. If sends exceed your quota, the system never stops your campaigns. Overage is billed automatically via Pay-As-You-Go per 1,000 emails sent.",
+          },
+          {
+            id: "dedicated-ip",
+            question: "Do I get a Dedicated IP?",
+            answer:
+              "Yes, for high-volume senders. Scale plans (1M+ emails/month) automatically include a Dedicated IP with managed IP Warmup protocol. Lower tiers use our strictly monitored Shared IP pools.",
+          },
+          {
+            id: "bounces-spam",
+            question: "How does Vokmo handle hard bounces and spam complaints?",
+            answer:
+              "Fully automated. Connected to global Feedback Loops, every hard bounce or spam complaint is pulled into the Global Suppression List. The system refuses future sends to those addresses to protect your domain score.",
+          },
+          {
+            id: "transactional-marketing",
+            question: "Can I separate transactional and marketing sends?",
+            answer:
+              "Absolutely. Separate traffic using different Sub-accounts or API Keys. We isolate server queues so millions of marketing blasts never slow sub-second critical sends (such as OTP).",
+          },
+        ],
+      },
       "final-cta": {
         ariaLabel: "Final call to action",
         headline: "Ready to scale your sending to the next level? Start building with Vokmo today.",
@@ -345,7 +389,20 @@ const id = {
           { id: "action", tag: "Kirim", label: "Penawaran Spesial" },
         ],
       },
-      "infrastructure-specs": { ariaLabel: "Spesifikasi infrastruktur" },
+      "infrastructure-specs": {
+        ariaLabel: "Infrastruktur edge global",
+        eyebrow: "Global Edge Infrastructure",
+        headline: "Infrastruktur Skala Global, Latensi Lokal",
+        body: "Didukung oleh perutean cloud tingkat tinggi, Vokmo memisahkan jalur antrean promosi dan transaksional Anda tetap instan meskipun Anda sedang mengirim jutaan newsletter.",
+        globeAriaLabel:
+          "Peta dunia datar vektor dengan node server edge di Singapura, Jakarta, US East, dan Eropa serta garis koneksi berdenyut",
+        nodes: [
+          { id: "singapore", label: "Singapura", code: "SIN" },
+          { id: "jakarta", label: "Jakarta", code: "CGK" },
+          { id: "us-east", label: "US East", code: "IAD" },
+          { id: "europe", label: "Eropa", code: "FRA" },
+        ],
+      },
       "developer-edge-api": { ariaLabel: "Developer edge API" },
       "platform-personas": { ariaLabel: "Persona platform" },
       "services-matrix": { ariaLabel: "Matriks layanan" },
@@ -403,7 +460,38 @@ const id = {
         ],
       },
       workflow: { ariaLabel: "Alur kerja" },
-      faq: { ariaLabel: "Pertanyaan umum" },
+      faq: {
+        ariaLabel: "Pertanyaan umum",
+        eyebrow: "FAQ",
+        headline: "Pertanyaan yang Sering Diajukan",
+        body: "Jawaban langsung tentang penagihan, Dedicated IP, penanganan bounce, dan pemisahan lalu lintas transaksional vs marketing.",
+        items: [
+          {
+            id: "volume-billing",
+            question: "Bagaimana struktur penagihan berbasis volume bekerja?",
+            answer:
+              "Vokmo menggunakan model hibrida. Anda memilih paket bulanan sesuai target volume rata-rata. Jika pengiriman melampaui kuota, sistem tidak akan pernah menghentikan kampanye Anda. Kelebihan volume otomatis ditagihkan lewat skema Pay-As-You-Go per 1.000 email terkirim.",
+          },
+          {
+            id: "dedicated-ip",
+            question: "Apakah saya mendapatkan Dedicated IP?",
+            answer:
+              "Ya, untuk pengirim bervolume tinggi. Paket Scale (1 Juta+ email/bulan) secara otomatis mendapatkan Dedicated IP lengkap dengan protokol IP Warmup terkelola. Untuk paket di bawahnya, pengiriman menggunakan jalur Shared IP kami yang reputasinya dipantau secara ketat.",
+          },
+          {
+            id: "bounces-spam",
+            question: "Bagaimana cara Vokmo menangani hard bounce dan keluhan spam?",
+            answer:
+              "Proses ini 100% otomatis. Terhubung dengan Feedback Loop global, setiap email hard bounce atau keluhan spam langsung ditarik ke Global Suppression List. Sistem akan menolak pengiriman ke alamat tersebut di masa depan untuk mengamankan skor domain Anda.",
+          },
+          {
+            id: "transactional-marketing",
+            question: "Bisakah saya memisahkan pengiriman transaksional dan marketing?",
+            answer:
+              "Sangat bisa. Anda dapat memisahkan lalu lintas pengiriman menggunakan Sub-account atau API Key yang berbeda. Kami mengisolasi antrean server, sehingga jutaan email blast marketing Anda tidak akan pernah menghambat pengiriman email kritis (seperti OTP) yang butuh latensi sub-detik.",
+          },
+        ],
+      },
       "final-cta": {
         ariaLabel: "Ajakan aksi akhir",
         headline:
