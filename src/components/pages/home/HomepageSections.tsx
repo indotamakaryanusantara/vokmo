@@ -9,6 +9,7 @@ import {
   ProblemSolutionSection,
   SolutionOverviewSection,
   DeliverabilityProofSection,
+  AnalyticsReportingSection,
 } from "@/components/pages/home";
 import { Container } from "@/components/shared/Container";
 import { Section } from "@/components/shared/Section";
@@ -83,6 +84,12 @@ export async function HomepageSections() {
         if (sectionId === "deliverability-proof") {
           return (
             <DeliverabilityProofSection key={section.id} copy={dict.home.sections["deliverability-proof"]} />
+          );
+        }
+
+        if (sectionId === "analytics-reporting") {
+          return (
+            <AnalyticsReportingSection key={section.id} copy={dict.home.sections["analytics-reporting"]} />
           );
         }
 

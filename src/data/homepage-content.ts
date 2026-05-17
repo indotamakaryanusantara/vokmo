@@ -21,6 +21,7 @@ const sectionBlueprint: Array<{
   { id: "scale-and-hygiene", component: "ScaleAndHygiene", ready: true },
   { id: "solution-overview", component: "SolutionOverviewSection", ready: true },
   { id: "deliverability-proof", component: "DeliverabilityProofSection", ready: true },
+  { id: "analytics-reporting", component: "AnalyticsReportingSection", ready: true },
   { id: "infrastructure-specs", component: "InfrastructureSpecs", ready: false },
   { id: "developer-edge-api", component: "DeveloperEdgeAPI", ready: false },
   { id: "platform-personas", ready: false },

@@ -7,3 +7,4 @@ export { InfrastructureSpecs } from "./InfrastructureSpecs";
 export { ScaleAndHygiene } from "./ScaleAndHygiene";
 export { SolutionOverviewSection } from "./SolutionOverviewSection";
 export { DeliverabilityProofSection } from "./DeliverabilityProofSection";
+export { AnalyticsReportingSection } from "./AnalyticsReportingSection";
