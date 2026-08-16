@@ -1,4 +1,5 @@
-import { PlaceholderPage } from "@/components/shared/PlaceholderPage";
+import { LegalPage } from "@/components/pages/legal/LegalPage";
+import { site } from "@/config/site";
 import { getDictionary } from "@/lib/i18n/dictionaries";
 import { getLocale } from "@/lib/i18n/server";
 import type { Metadata } from "next";
@@ -6,19 +7,16 @@ import type { Metadata } from "next";
 export async function generateMetadata(): Promise<Metadata> {
   const locale = await getLocale();
   const page = getDictionary(locale).pages.legal;
-  return { title: page.title, description: page.description };
+
+  return {
+    title: page.title,
+    description: page.description,
+  };
 }
 
-export default async function LegalPage() {
+export default async function LegalRoute() {
   const locale = await getLocale();
-  const { pages, common } = getDictionary(locale);
-  const page = pages.legal;
-  return (
-    <PlaceholderPage
-      eyebrow={common.brandEyebrow}
-      title={page.title}
-      description={page.description}
-      body={common.comingSoon}
-    />
-  );
+  const copy = getDictionary(locale).pages.legal;
+
+  return <LegalPage copy={copy} contactEmail={site.contactEmail} />;
 }

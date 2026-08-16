@@ -228,8 +228,58 @@ const en = {
   pages: {
     about: {
       title: "About VOKMO",
-      description: "Profile and focus of VOKMO enterprise email infrastructure services.",
-      body: "Page content will be added in upcoming iterations.",
+      description:
+        "VOKMO builds high-volume email infrastructure: managed SMTP Relay, 4-step list hygiene, and deliverability operations.",
+      ariaLabel: "About VOKMO",
+      eyebrow: "Company",
+      headline: "Infrastructure for sending that has to land",
+      body: "VOKMO is a digital infrastructure partner for marketers and developers who send at scale. We run SMTP Relay, list hygiene, DNS authentication, and deliverability ops—so campaigns and transactional mail share one stack without sharing one queue.",
+      pillarsAriaLabel: "What we operate",
+      pillars: [
+        {
+          id: "smtp",
+          name: "SMTP Relay",
+          summary: "Shared IP on Launch and Growth. Dedicated IP on Scale. Volume plans with Pay-As-You-Go overage so campaigns never pause.",
+        },
+        {
+          id: "hygiene",
+          name: "4-Step List Hygiene",
+          summary: "Syntax, domain, mailbox, and risk checks before you burn IP reputation on dead or toxic addresses.",
+        },
+        {
+          id: "deliverability",
+          name: "Deliverability",
+          summary: "SPF, DKIM, DMARC, PTR, BIMI guidance, warmup, bounce processing, and queue isolation for marketing vs OTP.",
+        },
+        {
+          id: "api",
+          name: "Developer API",
+          summary: "REST API, API Keys, Sub-accounts, and webhooks for delivery and bounce events—built for edge-ready apps.",
+        },
+      ],
+      principlesAriaLabel: "How we work",
+      principlesTitle: "How we work",
+      principles: [
+        {
+          id: "permission",
+          name: "Permission-based sending",
+          summary: "We design for opted-in lists. Purchased or scraped addresses are out of scope and against policy.",
+        },
+        {
+          id: "ops",
+          name: "Ops over slogans",
+          summary: "Inbox placement comes from IP reputation, DNS, bounce handling, and list quality—not from vague claims.",
+        },
+        {
+          id: "region",
+          name: "Built for Indonesia, sent globally",
+          summary: "Operations and support are Indonesia-first. Mailbox targets include Gmail, Microsoft, Yahoo, and regional ISPs.",
+        },
+      ],
+      ctaHeadline: "Talk to the team that runs the pipes.",
+      ctaPrimary: "Start for Free",
+      ctaSecondary: "Contact",
+      ctaDisclaimer: "No credit card required. Instant API access.",
     },
     pricing: {
       title: "Pricing",
@@ -463,7 +513,56 @@ const en = {
     },
     integrations: {
       title: "Integrations",
-      description: "Connect VOKMO with your ESP, CRM, and data stack.",
+      description: "Connect VOKMO to your cloud, ESP, CRM, and mailbox stack via SMTP Relay, API, and webhooks.",
+      ariaLabel: "VOKMO integrations",
+      eyebrow: "Integrations",
+      headline: "Plug volume into the stack you already run",
+      body: "VOKMO connects through SMTP Relay, REST API, and webhooks. Use it beside AWS, Cloudflare, mailbox providers, ESPs, and CRMs—without ripping out your current tools.",
+      ctaPrimary: "Start for Free",
+      ctaSecondary: "API Docs",
+      methodsAriaLabel: "Connection methods",
+      methods: [
+        {
+          id: "smtp",
+          name: "SMTP Relay",
+          summary: "Point your ESP or app at VOKMO SMTP. Dedicated IP on Scale; Shared IP on Launch and Growth.",
+        },
+        {
+          id: "api",
+          name: "REST API",
+          summary: "Send transactional mail with API Keys. Separate Sub-accounts for marketing vs OTP traffic.",
+        },
+        {
+          id: "webhooks",
+          name: "Webhooks",
+          summary: "Receive delivery, bounce, and compliance events in real time for your CRM or data stack.",
+        },
+      ],
+      catalogAriaLabel: "Compatible platforms",
+      groups: [
+        {
+          id: "cloud",
+          title: "Cloud & edge",
+          partnerIds: ["aws", "cloudflare"],
+        },
+        {
+          id: "mailbox",
+          title: "Mailbox providers",
+          partnerIds: ["google", "gmail", "microsoft", "meta"],
+        },
+        {
+          id: "esp",
+          title: "ESP & SMTP",
+          partnerIds: ["sendgrid", "mailgun", "sparkpost", "brevo", "mailchimp"],
+        },
+        {
+          id: "crm",
+          title: "CRM & support",
+          partnerIds: ["salesforce", "hubspot", "zendesk"],
+        },
+      ],
+      ctaHeadline: "Connect SMTP or API in one session.",
+      ctaDisclaimer: "No credit card required. Instant API access.",
     },
     webhooks: {
       title: "Webhooks",
@@ -475,7 +574,52 @@ const en = {
     },
     legal: {
       title: "Legal & Anti-Spam",
-      description: "Terms, privacy, and anti-spam policy for VOKMO services.",
+      description: "Terms of use, privacy, and anti-spam policy for VOKMO SMTP, API, and related services.",
+      ariaLabel: "Legal and anti-spam policy",
+      eyebrow: "Legal",
+      headline: "Terms, privacy, and anti-spam",
+      body: "These policies apply to vokmo.com and to SMTP, API, and related services operated under the VOKMO name. They are written for operators, not for theatre.",
+      updatedLabel: "Last updated",
+      updatedDate: "16 August 2026",
+      contactLead: "Questions about these policies:",
+      sectionsAriaLabel: "Legal sections",
+      sections: [
+        {
+          id: "terms",
+          title: "Terms of use",
+          paragraphs: [
+            "VOKMO provides email infrastructure: SMTP Relay, REST API, list hygiene tooling, and deliverability guidance. Access requires an account. You are responsible for credentials, Sub-accounts, and traffic sent through your keys or SMTP logins.",
+            "Plans are volume-based (Launch 100K, Growth 500K, Scale 1M+ emails per month). Overage is billed Pay-As-You-Go per 1,000 emails sent. We may suspend sending that threatens IP reputation, mailbox-provider standing, or other customers on Shared IP.",
+            "We do not guarantee inbox placement. Deliverability depends on your content, list source, DNS, and recipient engagement. Service descriptions on this site are operational, not a warranty of a specific inbox rate.",
+          ],
+        },
+        {
+          id: "anti-spam",
+          title: "Anti-spam & acceptable use",
+          paragraphs: [
+            "Sending through VOKMO must be permission-based. Recipients must have opted in to your mail, or have a legitimate transactional relationship with you (receipts, password reset, OTP).",
+            "Prohibited: harvested or scraped addresses; purchased or rented lists of unknown origin; spoofing From domains you do not control; phishing; malware; snowshoeing across IPs to evade filters; forging bounce or unsubscribe handling.",
+            "Every marketing campaign must include a working unsubscribe path. You must process unsubscribes and hard bounces promptly. We may require proof of consent and may terminate accounts that ignore complaints, trap hits, or mailbox-provider blocks.",
+            "Shared IP traffic is pooled. One abusive sender can damage neighbours. Dedicated IP on Scale isolates reputation but does not license spam. Abuse reports are investigated; include account, sending domain, and Message-IDs.",
+          ],
+        },
+        {
+          id: "privacy",
+          title: "Privacy",
+          paragraphs: [
+            "Account data (name, email, billing identity) is used to operate the service, authenticate API access, and communicate about incidents or policy. We do not sell subscriber lists.",
+            "Message metadata (timestamps, SMTP response codes, bounce categories, webhook payloads) is processed to deliver mail, protect IP reputation, and show analytics. Message content may transit our relays; treat it as operational traffic, not a private archive.",
+            "If you upload lists for hygiene, those addresses are processed to return quality signals. Do not upload data you are not allowed to process. Retention of hygiene files and logs is limited to what operations and abuse review require.",
+          ],
+        },
+        {
+          id: "contact",
+          title: "Legal contact",
+          paragraphs: [
+            "For terms, privacy, or abuse reports, use the address below. Identify the account, sending domain, and relevant Message-IDs so we can act on the correct stream.",
+          ],
+        },
+      ],
     },
   },
 } as const;
@@ -710,8 +854,58 @@ const id = {
   pages: {
     about: {
       title: "Tentang VOKMO",
-      description: "Profil dan fokus layanan infrastruktur email enterprise VOKMO.",
-      body: "Konten halaman ini akan ditambahkan bertahap.",
+      description:
+        "VOKMO membangun infrastruktur email volume tinggi: SMTP Relay terkelola, list hygiene 4-langkah, dan operasi deliverability.",
+      ariaLabel: "Tentang VOKMO",
+      eyebrow: "Company",
+      headline: "Infrastruktur untuk pengiriman yang harus sampai",
+      body: "VOKMO adalah mitra infrastruktur digital untuk marketer dan developer yang mengirim dalam skala besar. Kami menjalankan SMTP Relay, list hygiene, otentikasi DNS, dan operasi deliverability—agar kampanye dan email transaksional memakai satu stack tanpa berbagi satu antrean.",
+      pillarsAriaLabel: "Yang kami operasikan",
+      pillars: [
+        {
+          id: "smtp",
+          name: "SMTP Relay",
+          summary: "Shared IP di Launch dan Growth. Dedicated IP di Scale. Paket volume dengan overage Pay-As-You-Go agar kampanye tidak pernah berhenti.",
+        },
+        {
+          id: "hygiene",
+          name: "4-Step List Hygiene",
+          summary: "Pemeriksaan syntax, domain, mailbox, dan risiko sebelum reputasi IP terbakar oleh alamat mati atau toksik.",
+        },
+        {
+          id: "deliverability",
+          name: "Deliverability",
+          summary: "Panduan SPF, DKIM, DMARC, PTR, BIMI, warmup, pemrosesan bounce, dan isolasi antrean marketing vs OTP.",
+        },
+        {
+          id: "api",
+          name: "Developer API",
+          summary: "REST API, API Key, Sub-account, dan webhook untuk event delivery dan bounce—siap untuk aplikasi di edge.",
+        },
+      ],
+      principlesAriaLabel: "Cara kami bekerja",
+      principlesTitle: "Cara kami bekerja",
+      principles: [
+        {
+          id: "permission",
+          name: "Permission-based sending",
+          summary: "Kami merancang untuk list yang opted-in. Alamat beli atau hasil scrape di luar cakupan dan melanggar kebijakan.",
+        },
+        {
+          id: "ops",
+          name: "Operasi, bukan slogan",
+          summary: "Inbox placement datang dari reputasi IP, DNS, penanganan bounce, dan kualitas list—bukan dari klaim kosong.",
+        },
+        {
+          id: "region",
+          name: "Dibangun untuk Indonesia, dikirim secara global",
+          summary: "Operasi dan dukungan berpusat di Indonesia. Target mailbox mencakup Gmail, Microsoft, Yahoo, dan ISP regional.",
+        },
+      ],
+      ctaHeadline: "Bicara dengan tim yang menjalankan pipanya.",
+      ctaPrimary: "Mulai Gratis",
+      ctaSecondary: "Kontak",
+      ctaDisclaimer: "Tidak perlu kartu kredit. Akses API instan.",
     },
     pricing: {
       title: "Pricing",
@@ -953,7 +1147,57 @@ const id = {
     },
     integrations: {
       title: "Integrasi",
-      description: "Hubungkan VOKMO dengan ESP, CRM, dan stack data Anda.",
+      description:
+        "Hubungkan VOKMO ke cloud, ESP, CRM, dan mailbox stack lewat SMTP Relay, API, dan webhook.",
+      ariaLabel: "Integrasi VOKMO",
+      eyebrow: "Integrations",
+      headline: "Masukkan volume ke stack yang sudah Anda jalankan",
+      body: "VOKMO terhubung lewat SMTP Relay, REST API, dan webhook. Dipakai berdampingan dengan AWS, Cloudflare, mailbox provider, ESP, dan CRM—tanpa membongkar tool yang ada.",
+      ctaPrimary: "Mulai Gratis",
+      ctaSecondary: "API Docs",
+      methodsAriaLabel: "Metode koneksi",
+      methods: [
+        {
+          id: "smtp",
+          name: "SMTP Relay",
+          summary: "Arahkan ESP atau aplikasi ke SMTP VOKMO. Dedicated IP di Scale; Shared IP di Launch dan Growth.",
+        },
+        {
+          id: "api",
+          name: "REST API",
+          summary: "Kirim email transaksional dengan API Key. Pisahkan Sub-account untuk traffic marketing vs OTP.",
+        },
+        {
+          id: "webhooks",
+          name: "Webhooks",
+          summary: "Terima event delivery, bounce, dan compliance secara real-time ke CRM atau stack data Anda.",
+        },
+      ],
+      catalogAriaLabel: "Platform yang kompatibel",
+      groups: [
+        {
+          id: "cloud",
+          title: "Cloud & edge",
+          partnerIds: ["aws", "cloudflare"],
+        },
+        {
+          id: "mailbox",
+          title: "Mailbox provider",
+          partnerIds: ["google", "gmail", "microsoft", "meta"],
+        },
+        {
+          id: "esp",
+          title: "ESP & SMTP",
+          partnerIds: ["sendgrid", "mailgun", "sparkpost", "brevo", "mailchimp"],
+        },
+        {
+          id: "crm",
+          title: "CRM & support",
+          partnerIds: ["salesforce", "hubspot", "zendesk"],
+        },
+      ],
+      ctaHeadline: "Hubungkan SMTP atau API dalam satu sesi.",
+      ctaDisclaimer: "Tidak perlu kartu kredit. Akses API instan.",
     },
     webhooks: {
       title: "Webhooks",
@@ -965,7 +1209,52 @@ const id = {
     },
     legal: {
       title: "Legal & Anti-Spam",
-      description: "Ketentuan, privasi, dan kebijakan anti-spam layanan VOKMO.",
+      description: "Ketentuan penggunaan, privasi, dan kebijakan anti-spam untuk SMTP, API, dan layanan terkait VOKMO.",
+      ariaLabel: "Kebijakan legal dan anti-spam",
+      eyebrow: "Legal",
+      headline: "Ketentuan, privasi, dan anti-spam",
+      body: "Kebijakan ini berlaku untuk vokmo.com serta SMTP, API, dan layanan terkait yang dioperasikan atas nama VOKMO. Ditulis untuk operator, bukan untuk teater.",
+      updatedLabel: "Terakhir diperbarui",
+      updatedDate: "16 Agustus 2026",
+      contactLead: "Pertanyaan tentang kebijakan ini:",
+      sectionsAriaLabel: "Bagian legal",
+      sections: [
+        {
+          id: "terms",
+          title: "Ketentuan penggunaan",
+          paragraphs: [
+            "VOKMO menyediakan infrastruktur email: SMTP Relay, REST API, perangkat list hygiene, dan panduan deliverability. Akses memerlukan akun. Anda bertanggung jawab atas kredensial, Sub-account, dan traffic yang dikirim lewat API Key atau login SMTP Anda.",
+            "Paket berbasis volume (Launch 100K, Growth 500K, Scale 1M+ email per bulan). Overage ditagih Pay-As-You-Go per 1.000 email terkirim. Kami dapat menangguhkan pengiriman yang mengancam reputasi IP, standing di mailbox provider, atau pelanggan lain di Shared IP.",
+            "Kami tidak menjamin inbox placement. Deliverability bergantung pada konten, sumber list, DNS, dan engagement penerima. Deskripsi layanan di situs ini bersifat operasional, bukan garansi persentase inbox tertentu.",
+          ],
+        },
+        {
+          id: "anti-spam",
+          title: "Anti-spam & acceptable use",
+          paragraphs: [
+            "Pengiriman lewat VOKMO harus permission-based. Penerima harus opted-in ke mail Anda, atau memiliki hubungan transaksional yang sah (struk, reset password, OTP).",
+            "Dilarang: alamat hasil harvest atau scrape; list beli atau sewa yang asal-usulnya tidak jelas; spoofing domain From yang tidak Anda kendalikan; phishing; malware; snowshoeing antar IP untuk menghindari filter; memalsukan penanganan bounce atau unsubscribe.",
+            "Setiap kampanye marketing harus menyertakan jalur unsubscribe yang berfungsi. Unsubscribe dan hard bounce harus diproses segera. Kami dapat meminta bukti consent dan menutup akun yang mengabaikan komplain, trap hit, atau blokir mailbox provider.",
+            "Traffic Shared IP bersifat pooled. Satu pengirim abusif merusak tetangga. Dedicated IP di Scale mengisolasi reputasi tetapi tidak memberi izin spam. Laporan abuse akan diselidiki; sertakan akun, sending domain, dan Message-ID.",
+          ],
+        },
+        {
+          id: "privacy",
+          title: "Privasi",
+          paragraphs: [
+            "Data akun (nama, email, identitas penagihan) dipakai untuk mengoperasikan layanan, mengautentikasi akses API, dan berkomunikasi soal insiden atau kebijakan. Kami tidak menjual subscriber list.",
+            "Metadata pesan (timestamp, kode respons SMTP, kategori bounce, payload webhook) diproses untuk mengirim mail, melindungi reputasi IP, dan menampilkan analytics. Konten pesan dapat melewati relay kami; perlakukan sebagai traffic operasional, bukan arsip pribadi.",
+            "Jika Anda mengunggah list untuk hygiene, alamat itu diproses untuk menghasilkan sinyal kualitas. Jangan unggah data yang tidak berhak Anda proses. Retensi file hygiene dan log dibatasi pada kebutuhan operasi dan tinjauan abuse.",
+          ],
+        },
+        {
+          id: "contact",
+          title: "Kontak legal",
+          paragraphs: [
+            "Untuk ketentuan, privasi, atau laporan abuse, gunakan alamat di bawah. Identifikasi akun, sending domain, dan Message-ID yang relevan agar kami menindak stream yang benar.",
+          ],
+        },
+      ],
     },
   },
 } as const;

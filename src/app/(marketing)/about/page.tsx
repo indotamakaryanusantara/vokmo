@@ -1,4 +1,5 @@
-import { PlaceholderPage } from "@/components/shared/PlaceholderPage";
+import { AboutPage } from "@/components/pages/about/AboutPage";
+import { site } from "@/config/site";
 import { getDictionary } from "@/lib/i18n/dictionaries";
 import { getLocale } from "@/lib/i18n/server";
 import type { Metadata } from "next";
@@ -13,17 +14,9 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-export default async function AboutPage() {
+export default async function AboutRoute() {
   const locale = await getLocale();
-  const { pages, common } = getDictionary(locale);
-  const page = pages.about;
+  const copy = getDictionary(locale).pages.about;
 
-  return (
-    <PlaceholderPage
-      eyebrow={common.brandEyebrow}
-      title={page.title}
-      description={page.description}
-      body={page.body}
-    />
-  );
+  return <AboutPage copy={copy} contactHref={`mailto:${site.contactEmail}`} />;
 }
