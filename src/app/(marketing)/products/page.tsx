@@ -1,4 +1,4 @@
-import { PlaceholderPage } from "@/components/shared/PlaceholderPage";
+import { ProductsPage } from "@/components/pages/products/ProductsPage";
 import { getDictionary } from "@/lib/i18n/dictionaries";
 import { getLocale } from "@/lib/i18n/server";
 import type { Metadata } from "next";
@@ -13,17 +13,9 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-export default async function ProductsPage() {
+export default async function ProductsRoute() {
   const locale = await getLocale();
-  const { pages, common } = getDictionary(locale);
-  const page = pages.products;
+  const copy = getDictionary(locale).pages.products;
 
-  return (
-    <PlaceholderPage
-      eyebrow={common.brandEyebrow}
-      title={page.title}
-      description={page.description}
-      body={common.comingSoon}
-    />
-  );
+  return <ProductsPage copy={copy} />;
 }

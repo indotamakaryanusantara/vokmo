@@ -242,7 +242,79 @@ const en = {
     },
     products: {
       title: "Products",
-      description: "VOKMO email infrastructure products: SMTP relay, list hygiene, and managed delivery.",
+      description:
+        "Managed SMTP Relay, 4-step list hygiene, Deliverability Suite, and Edge API for high-volume sending.",
+      ariaLabel: "VOKMO products",
+      eyebrow: "Infrastructure stack",
+      headline: "Email infrastructure built for volume and inbox placement",
+      body: "VOKMO combines managed SMTP Relay, automated list hygiene, DNS authentication, and Edge API so campaigns stay in the Inbox—even at millions of sends per month.",
+      ctaPrimary: "Start for Free",
+      ctaSecondary: "View Pricing",
+      catalogAriaLabel: "Product catalog",
+      items: [
+        {
+          id: "smtp-relay",
+          name: "Managed SMTP Relay",
+          summary: "High-volume sending with Dedicated IP, IP Warmup, and isolated promotional vs transactional queues.",
+          points: [
+            "Managed PowerMTA and SMTP Relay with IP Rotation",
+            "Dedicated IP on Scale plans, with Shared IP pools on lower tiers",
+            "Queue isolation so marketing blasts never delay OTP or transactional mail",
+          ],
+        },
+        {
+          id: "list-hygiene",
+          name: "4-Step List Hygiene",
+          summary: "Clean lists before a single message leaves your relay. Protect domain score from the first campaign.",
+          points: [
+            "Syntax check, hard bounce removal, spam trap detection, domain validation",
+            "Built for large imports—hundreds of thousands of contacts per upload",
+            "Hard bounces and spam complaints feed a Global Suppression List automatically",
+          ],
+        },
+        {
+          id: "deliverability",
+          name: "Deliverability Suite",
+          summary: "SPF, DKIM, and DMARC setup guided to Google and Microsoft standards—without DNS guesswork.",
+          points: [
+            "Authentication checklist: SPF Valid, DKIM Valid, DMARC Enforced",
+            "Feedback Loop processing and automated bounce handling",
+            "Reputation monitoring on Shared IP and Dedicated IP paths",
+          ],
+        },
+        {
+          id: "analytics",
+          name: "Real-time Analytics",
+          summary: "Granular opens, clicks, device mix, and click heatmap so the next send is based on data—not guesswork.",
+          points: [
+            "Open rate, click rate, and unique opens in one dashboard",
+            "Device breakdown and click heatmap on email layouts",
+            "Signals you can use to optimize cadence and creative",
+          ],
+        },
+        {
+          id: "developer-api",
+          name: "Developer Edge API",
+          summary: "Sub-second transactional sends via REST API, API Keys, and webhooks—ready for modern edge stacks.",
+          points: [
+            "Separate Sub-accounts or API Keys for marketing vs transactional traffic",
+            "Webhooks for delivery, bounce, and compliance events",
+            "Documentation aimed at production integration, not demos",
+          ],
+        },
+        {
+          id: "automation",
+          name: "Automation & Segmentation",
+          summary: "Behavior-based journeys: trigger on opens and clicks, wait, then send—without blocking the sending engine.",
+          points: [
+            "Workflow nodes for trigger, wait, and send",
+            "Segmentation from real-time interaction history",
+            "Runs on the same infrastructure that handles bulk newsletter volume",
+          ],
+        },
+      ],
+      ctaHeadline: "Ready to run volume on infrastructure built for the Inbox?",
+      ctaDisclaimer: "No credit card required. Instant API access.",
     },
     apiDocs: {
       title: "API Docs",
@@ -520,7 +592,84 @@ const id = {
     products: {
       title: "Produk",
       description:
-        "Produk infrastruktur email VOKMO: SMTP relay, hygiene list 4-langkah, dan pengiriman terkelola.",
+        "SMTP Relay terkelola, hygiene list 4-langkah, Deliverability Suite, dan Edge API untuk pengiriman bervolume tinggi.",
+      ariaLabel: "Produk VOKMO",
+      eyebrow: "Infrastructure stack",
+      headline: "Infrastruktur email untuk volume tinggi dan inbox placement",
+      body: "VOKMO menggabungkan SMTP Relay terkelola, hygiene list otomatis, otentikasi DNS, dan Edge API agar kampanye tetap masuk Inbox—meski volume mencapai jutaan email per bulan.",
+      ctaPrimary: "Mulai Gratis",
+      ctaSecondary: "Lihat Pricing",
+      catalogAriaLabel: "Katalog produk",
+      items: [
+        {
+          id: "smtp-relay",
+          name: "Managed SMTP Relay",
+          summary:
+            "Pengiriman bervolume tinggi dengan Dedicated IP, IP Warmup, dan antrean promosi vs transaksional yang terisolasi.",
+          points: [
+            "PowerMTA dan SMTP Relay terkelola dengan IP Rotation",
+            "Dedicated IP pada paket Scale; Shared IP pada paket di bawahnya",
+            "Isolasi antrean agar blast marketing tidak menunda OTP atau email transaksional",
+          ],
+        },
+        {
+          id: "list-hygiene",
+          name: "4-Step List Hygiene",
+          summary:
+            "Bersihkan list sebelum satu pesan pun meninggalkan relay. Lindungi skor domain sejak kampanye pertama.",
+          points: [
+            "Syntax check, hard bounce removal, spam trap detection, domain validation",
+            "Siap import besar—ratusan ribu kontak per unggahan",
+            "Hard bounce dan keluhan spam masuk Global Suppression List secara otomatis",
+          ],
+        },
+        {
+          id: "deliverability",
+          name: "Deliverability Suite",
+          summary:
+            "Penyiapan SPF, DKIM, dan DMARC sesuai standar Google dan Microsoft—tanpa tebak-tebakan DNS.",
+          points: [
+            "Checklist otentikasi: SPF Valid, DKIM Valid, DMARC Enforced",
+            "Pemrosesan Feedback Loop dan penanganan bounce otomatis",
+            "Pemantauan reputasi pada jalur Shared IP dan Dedicated IP",
+          ],
+        },
+        {
+          id: "analytics",
+          name: "Real-time Analytics",
+          summary:
+            "Open, klik, perangkat, dan heatmap klik yang granular agar pengiriman berikutnya berbasis data.",
+          points: [
+            "Open rate, click rate, dan unique opens dalam satu dashboard",
+            "Breakdown perangkat dan heatmap klik pada layout email",
+            "Sinyal untuk mengoptimalkan cadence dan creative",
+          ],
+        },
+        {
+          id: "developer-api",
+          name: "Developer Edge API",
+          summary:
+            "Pengiriman transaksional sub-detik lewat REST API, API Key, dan webhook—siap untuk stack edge modern.",
+          points: [
+            "Sub-account atau API Key terpisah untuk traffic marketing vs transaksional",
+            "Webhook untuk event delivery, bounce, dan compliance",
+            "Dokumentasi untuk integrasi produksi, bukan demo",
+          ],
+        },
+        {
+          id: "automation",
+          name: "Automation & Segmentation",
+          summary:
+            "Journey berbasis perilaku: trigger dari open dan klik, tunggu, lalu kirim—tanpa menghambat mesin pengiriman.",
+          points: [
+            "Node workflow untuk trigger, wait, dan send",
+            "Segmentasi dari histori interaksi real-time",
+            "Berjalan di infrastruktur yang sama untuk volume newsletter besar",
+          ],
+        },
+      ],
+      ctaHeadline: "Siap menjalankan volume di infrastruktur yang dibangun untuk Inbox?",
+      ctaDisclaimer: "Tidak perlu kartu kredit. Akses API instan.",
     },
     apiDocs: {
       title: "Dokumentasi API",
