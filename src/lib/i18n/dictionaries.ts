@@ -312,8 +312,65 @@ const en = {
     },
     deliverability: {
       title: "Deliverability",
-      description: "SPF, DKIM, DMARC, BIMI, PTR audits and inbox placement playbooks from VOKMO.",
-      body: "Deliverability audit service page — content will be added in upcoming iterations.",
+      description:
+        "SPF, DKIM, DMARC, BIMI, PTR, IP Warmup, and automated bounce handling for Inbox placement at volume.",
+      ariaLabel: "VOKMO Deliverability",
+      eyebrow: "Deliverability Suite",
+      headline: "Inbox placement is an infrastructure problem",
+      body: "VOKMO guides DNS authentication, warms Dedicated IP, and suppresses hard bounces and spam complaints automatically—so volume does not burn your domain score.",
+      ctaPrimary: "Start for Free",
+      ctaSecondary: "View Pricing",
+      shieldLabel: "DNS authentication secured",
+      checklistTitle: "DNS indicators",
+      checklistAriaLabel: "Authentication status",
+      dnsRecords: [
+        { id: "spf", name: "SPF", status: "Valid" },
+        { id: "dkim", name: "DKIM", status: "Valid" },
+        { id: "dmarc", name: "DMARC", status: "Enforced" },
+        { id: "bimi", name: "BIMI", status: "Ready" },
+        { id: "ptr", name: "PTR", status: "Aligned" },
+      ],
+      practicesAriaLabel: "Deliverability practices",
+      practices: [
+        {
+          id: "dns-auth",
+          name: "SPF, DKIM, DMARC",
+          summary:
+            "Guided DNS setup to Google and Microsoft standards. No guesswork on record syntax or policy.",
+        },
+        {
+          id: "ip-warmup",
+          name: "IP Warmup",
+          summary:
+            "Scale plans include Dedicated IP with a managed Warmup protocol before you push full volume.",
+        },
+        {
+          id: "bounce-fbl",
+          name: "Bounce & Feedback Loop",
+          summary:
+            "Hard bounces and spam complaints go to the Global Suppression List. Future sends to those addresses are refused.",
+        },
+        {
+          id: "list-hygiene",
+          name: "4-Step List Hygiene",
+          summary:
+            "Syntax check, hard bounce removal, spam trap detection, and domain validation before the first send.",
+        },
+        {
+          id: "ptr-bimi",
+          name: "PTR & BIMI",
+          summary:
+            "Reverse DNS alignment and BIMI readiness so mailbox providers can trust the sending identity.",
+        },
+        {
+          id: "queue-isolation",
+          name: "Queue isolation",
+          summary:
+            "Promotional blasts never delay transactional mail. Separate Sub-accounts or API Keys keep OTP sub-second.",
+        },
+      ],
+      ctaHeadline: "Protect domain score before you scale volume.",
+      ctaDisclaimer: "No credit card required. Instant API access.",
     },
     products: {
       title: "Products",
@@ -736,8 +793,65 @@ const id = {
     },
     deliverability: {
       title: "Deliverability",
-      description: "Audit SPF, DKIM, DMARC, BIMI, PTR, dan playbook inbox placement VOKMO.",
-      body: "Halaman layanan audit deliverability — konten akan ditambahkan bertahap.",
+      description:
+        "SPF, DKIM, DMARC, BIMI, PTR, IP Warmup, dan penanganan bounce otomatis untuk Inbox placement di volume tinggi.",
+      ariaLabel: "Deliverability VOKMO",
+      eyebrow: "Deliverability Suite",
+      headline: "Inbox placement adalah masalah infrastruktur",
+      body: "VOKMO memandu otentikasi DNS, melakukan Warmup Dedicated IP, dan menekan hard bounce serta keluhan spam secara otomatis—agar volume tidak membakar skor domain Anda.",
+      ctaPrimary: "Mulai Gratis",
+      ctaSecondary: "Lihat Pricing",
+      shieldLabel: "Otentikasi DNS terlindungi",
+      checklistTitle: "Indikator DNS",
+      checklistAriaLabel: "Status otentikasi",
+      dnsRecords: [
+        { id: "spf", name: "SPF", status: "Valid" },
+        { id: "dkim", name: "DKIM", status: "Valid" },
+        { id: "dmarc", name: "DMARC", status: "Enforced" },
+        { id: "bimi", name: "BIMI", status: "Ready" },
+        { id: "ptr", name: "PTR", status: "Aligned" },
+      ],
+      practicesAriaLabel: "Praktik Deliverability",
+      practices: [
+        {
+          id: "dns-auth",
+          name: "SPF, DKIM, DMARC",
+          summary:
+            "Penyiapan DNS terpandu sesuai standar Google dan Microsoft. Tanpa tebak-tebakan sintaks record atau kebijakan.",
+        },
+        {
+          id: "ip-warmup",
+          name: "IP Warmup",
+          summary:
+            "Paket Scale termasuk Dedicated IP dengan protokol Warmup terkelola sebelum volume penuh.",
+        },
+        {
+          id: "bounce-fbl",
+          name: "Bounce & Feedback Loop",
+          summary:
+            "Hard bounce dan keluhan spam masuk Global Suppression List. Pengiriman ke alamat itu ditolak ke depannya.",
+        },
+        {
+          id: "list-hygiene",
+          name: "4-Step List Hygiene",
+          summary:
+            "Syntax check, hard bounce removal, spam trap detection, dan domain validation sebelum pengiriman pertama.",
+        },
+        {
+          id: "ptr-bimi",
+          name: "PTR & BIMI",
+          summary:
+            "Penyelarasan reverse DNS dan kesiapan BIMI agar mailbox provider mempercayai identitas pengirim.",
+        },
+        {
+          id: "queue-isolation",
+          name: "Isolasi antrean",
+          summary:
+            "Blast marketing tidak menunda email transaksional. Sub-account atau API Key terpisah menjaga OTP sub-detik.",
+        },
+      ],
+      ctaHeadline: "Lindungi skor domain sebelum menaikkan volume.",
+      ctaDisclaimer: "Tidak perlu kartu kredit. Akses API instan.",
     },
     products: {
       title: "Produk",
