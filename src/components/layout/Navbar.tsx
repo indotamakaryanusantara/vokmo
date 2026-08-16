@@ -1,8 +1,8 @@
 "use client";
 
-import { site } from "@/config/site";
 import { useLocale } from "@/components/providers/LocaleProvider";
 import { Container } from "@/components/shared/Container";
+import { BrandLogo } from "@/components/layout/BrandLogo";
 import { LocaleToggle } from "@/components/layout/LocaleToggle";
 import { getHeaderAuth, getHeaderNav } from "@/lib/i18n/navigation";
 import { useDictionary } from "@/lib/i18n/use-dictionary";
@@ -54,10 +54,10 @@ export function Navbar() {
       <Container className="flex h-16 items-center justify-between gap-4 lg:h-[4.25rem]">
         <Link
           href="/"
-          className="shrink-0 font-sans text-lg font-semibold tracking-tight text-slate-900"
+          className="inline-flex shrink-0 items-center"
           onClick={() => setMobileOpen(false)}
         >
-          {site.name}
+          <BrandLogo alt={dict.a11y.logoHome} priority />
         </Link>
 
         <nav

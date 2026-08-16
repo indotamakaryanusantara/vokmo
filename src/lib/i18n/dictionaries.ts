@@ -11,6 +11,7 @@ const en = {
     openMenu: "Open menu",
     closeMenu: "Close menu",
     localeToggle: "Choose language",
+    logoHome: "VOKMO home",
   },
   nav: {
     products: "Products",
@@ -490,6 +491,7 @@ const id = {
     openMenu: "Buka menu",
     closeMenu: "Tutup menu",
     localeToggle: "Pilih bahasa",
+    logoHome: "Beranda VOKMO",
   },
   nav: {
     products: "Produk",

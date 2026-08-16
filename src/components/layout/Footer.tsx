@@ -1,4 +1,5 @@
 import { site } from "@/config/site";
+import { BrandLogo } from "@/components/layout/BrandLogo";
 import { FooterSocial } from "@/components/layout/FooterSocial";
 import { getDictionary } from "@/lib/i18n/dictionaries";
 import { getFooterNav } from "@/lib/i18n/footer";
@@ -41,7 +42,9 @@ export async function Footer() {
 
         <div className="mt-10 border-t border-border pt-8 sm:mt-12 sm:pt-10">
           <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between sm:gap-6">
-            <p className="font-heading text-lg font-semibold tracking-tight text-slate-900">{site.name}</p>
+            <Link href="/" className="inline-flex shrink-0 items-center">
+              <BrandLogo alt={dict.a11y.logoHome} className="h-7 lg:h-8" />
+            </Link>
             <FooterSocial />
           </div>
           <p className="mt-5 text-xs leading-relaxed text-pretty text-muted">{`© ${year} ${site.legalName}. ${dict.footer.copyright}`}</p>
