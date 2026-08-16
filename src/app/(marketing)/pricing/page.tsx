@@ -1,4 +1,4 @@
-import { PlaceholderPage } from "@/components/shared/PlaceholderPage";
+import { PricingPage } from "@/components/pages/pricing/PricingPage";
 import { getDictionary } from "@/lib/i18n/dictionaries";
 import { getLocale } from "@/lib/i18n/server";
 import type { Metadata } from "next";
@@ -13,17 +13,9 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-export default async function PricingPage() {
+export default async function PricingRoute() {
   const locale = await getLocale();
-  const { pages, common } = getDictionary(locale);
-  const page = pages.pricing;
+  const copy = getDictionary(locale).pages.pricing;
 
-  return (
-    <PlaceholderPage
-      eyebrow={common.brandEyebrow}
-      title={page.title}
-      description={page.description}
-      body={page.body}
-    />
-  );
+  return <PricingPage copy={copy} />;
 }
